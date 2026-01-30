@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0, type: 0}
+  m_Script: {fileID: 11500000, guid: 47bf5197954ff6749b434e17e83abccd, type: 3}
   m_Name: Node08_Final
   m_EditorClassIdentifier: 
   dialogueText: "We've been at this for hours. You seem like a reasonable person. Just admit what happened, and I'll personally recommend leniency."

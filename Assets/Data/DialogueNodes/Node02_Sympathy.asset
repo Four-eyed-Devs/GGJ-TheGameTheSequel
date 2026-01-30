@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0, type: 0}
+  m_Script: {fileID: 11500000, guid: 47bf5197954ff6749b434e17e83abccd, type: 3}
   m_Name: Node02_Sympathy
   m_EditorClassIdentifier: 
   dialogueText: "I've seen your file. Rough childhood. Absent father. I get it - life hasn't been kind to you. Maybe that's why you snapped?"
