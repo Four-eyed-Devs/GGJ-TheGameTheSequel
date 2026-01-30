@@ -29,6 +29,7 @@ public class MaskButton : MonoBehaviour
     
     private Button button;
     private int currentDurability;
+    private bool isSubscribed = false;
     
     private void Awake()
     {
@@ -38,22 +39,43 @@ public class MaskButton : MonoBehaviour
     
     private void Start()
     {
+        // Delay subscription to ensure GameManager is ready
+        StartCoroutine(DelayedInitialize());
+    }
+    
+    private System.Collections.IEnumerator DelayedInitialize()
+    {
+        // Wait one frame for GameManager.Awake() to complete
+        yield return null;
+        
         if (cardData != null)
         {
             Initialize(cardData);
         }
         
-        // Subscribe to durability changes
+        // Subscribe to GameManager events
+        SubscribeToEvents();
+        
+        // Set initial button state based on current game state
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.OnMaskDurabilityChanged += HandleDurabilityChanged;
-            GameManager.Instance.OnGameStateChanged += HandleGameStateChanged;
+            HandleGameStateChanged(GameManager.Instance.CurrentState);
         }
+    }
+    
+    private void SubscribeToEvents()
+    {
+        if (isSubscribed || GameManager.Instance == null) return;
+        
+        GameManager.Instance.OnMaskDurabilityChanged += HandleDurabilityChanged;
+        GameManager.Instance.OnGameStateChanged += HandleGameStateChanged;
+        isSubscribed = true;
+        Debug.Log($"[MaskButton] {(cardData != null ? cardData.maskName : name)} on GameObject '{gameObject.name}' subscribed to GameManager");
     }
     
     private void OnDestroy()
     {
-        if (GameManager.Instance != null)
+        if (isSubscribed && GameManager.Instance != null)
         {
             GameManager.Instance.OnMaskDurabilityChanged -= HandleDurabilityChanged;
             GameManager.Instance.OnGameStateChanged -= HandleGameStateChanged;
@@ -135,15 +157,29 @@ public class MaskButton : MonoBehaviour
     /// </summary>
     private void OnButtonClicked()
     {
+        if (cardData == null)
+        {
+            Debug.LogError($"[MaskButton] {name} has no CardData assigned!");
+            return;
+        }
+        
         if (GameManager.Instance == null)
         {
             Debug.LogError("[MaskButton] GameManager not found!");
             return;
         }
         
+        Debug.Log($"[MaskButton] Clicked: {cardData.maskName}, State: {GameManager.Instance.CurrentState}, Durability: {currentDurability}");
+        
         if (currentDurability <= 0)
         {
             Debug.LogWarning($"[MaskButton] {cardData.maskName} is broken!");
+            return;
+        }
+        
+        if (GameManager.Instance.CurrentState != GameManager.GameState.WaitingForInput)
+        {
+            Debug.LogWarning($"[MaskButton] Cannot select - game state is {GameManager.Instance.CurrentState}");
             return;
         }
         
@@ -176,6 +212,7 @@ public class MaskButton : MonoBehaviour
         // Only allow clicking during input phase
         bool canInteract = newState == GameManager.GameState.WaitingForInput && currentDurability > 0;
         button.interactable = canInteract;
+        Debug.Log($"[MaskButton] {(cardData != null ? cardData.maskName : name)} - State: {newState}, Interactable: {canInteract}");
     }
     
     /// <summary>

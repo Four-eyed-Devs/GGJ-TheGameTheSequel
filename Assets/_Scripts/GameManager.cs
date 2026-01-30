@@ -55,17 +55,23 @@ public class GameManager : MonoBehaviour
     
     private void Awake()
     {
+        Debug.Log("[GameManager] Awake called");
+        
         // Singleton setup
         if (Instance != null && Instance != this)
         {
+            Debug.Log("[GameManager] Duplicate instance destroyed");
             Destroy(gameObject);
             return;
         }
         Instance = this;
+        Debug.Log("[GameManager] Singleton instance set");
     }
     
     private void Start()
     {
+        Debug.Log($"[GameManager] Start called. Masks: {(masks != null ? masks.Length : 0)}, Nodes: {(dialogueSequence != null ? dialogueSequence.Length : 0)}");
+        
         // Check for existing save
         if (GameSaveData.HasSave())
         {
@@ -82,6 +88,19 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartNewGame()
     {
+        // Validate configuration
+        if (masks == null || masks.Length == 0)
+        {
+            Debug.LogError("[GameManager] No masks assigned! Drag CardData assets into the Masks array.");
+            return;
+        }
+        
+        if (dialogueSequence == null || dialogueSequence.Length == 0)
+        {
+            Debug.LogError("[GameManager] No dialogue nodes assigned! Drag DialogueNode assets into the Dialogue Sequence array.");
+            return;
+        }
+        
         GameSaveData.ClearSave();
         
         suspicionMeter = 0;
@@ -91,7 +110,11 @@ public class GameManager : MonoBehaviour
         maskDurabilities = new int[4];
         foreach (var mask in masks)
         {
-            maskDurabilities[(int)mask.maskType] = mask.maxDurability;
+            if (mask != null)
+            {
+                maskDurabilities[(int)mask.maskType] = mask.maxDurability;
+                Debug.Log($"[GameManager] Initialized {mask.maskName} with durability {mask.maxDurability}");
+            }
         }
         
         Debug.Log("[GameManager] Starting new interrogation...");
