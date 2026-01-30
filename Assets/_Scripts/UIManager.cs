@@ -84,12 +84,16 @@ public class UIManager : MonoBehaviour
         // Initialize suspicion meter
         UpdateSuspicionDisplay(GameManager.Instance.SuspicionMeter, animate: false);
         
-        // Initialize mask buttons if array is set
-        if (maskButtons != null && GameManager.Instance.masks != null)
+        // Refresh mask buttons (only if they don't already have CardData assigned)
+        if (maskButtons != null)
         {
-            for (int i = 0; i < maskButtons.Length && i < GameManager.Instance.masks.Length; i++)
+            for (int i = 0; i < maskButtons.Length; i++)
             {
-                maskButtons[i].Initialize(GameManager.Instance.masks[i]);
+                if (maskButtons[i] != null && maskButtons[i].cardData != null)
+                {
+                    // Re-initialize to refresh durability display from GameManager
+                    maskButtons[i].Initialize(maskButtons[i].cardData);
+                }
             }
         }
         

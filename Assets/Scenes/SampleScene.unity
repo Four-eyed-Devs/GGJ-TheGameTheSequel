@@ -1130,6 +1130,7 @@ GameObject:
   - component: {fileID: 369725906}
   - component: {fileID: 369725905}
   - component: {fileID: 369725904}
+  - component: {fileID: 369725908}
   m_Layer: 0
   m_Name: MaskButton_0
   m_TagString: Untagged
@@ -1264,6 +1265,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369725902}
   m_CullTransparentMesh: 1
+--- !u!114 &369725908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369725902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f51c9214b652a46b1c2171fe7e4798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonRaycastFix
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,6 +2769,7 @@ GameObject:
   - component: {fileID: 1273328269}
   - component: {fileID: 1273328268}
   - component: {fileID: 1273328267}
+  - component: {fileID: 1273328271}
   m_Layer: 0
   m_Name: MaskButton_2
   m_TagString: Untagged
@@ -2890,6 +2904,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273328265}
   m_CullTransparentMesh: 1
+--- !u!114 &1273328271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273328265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f51c9214b652a46b1c2171fe7e4798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonRaycastFix
 --- !u!1 &1424569971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,6 +3414,7 @@ GameObject:
   - component: {fileID: 1764137799}
   - component: {fileID: 1764137798}
   - component: {fileID: 1764137797}
+  - component: {fileID: 1764137801}
   m_Layer: 0
   m_Name: MaskButton_1
   m_TagString: Untagged
@@ -3522,6 +3549,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764137795}
   m_CullTransparentMesh: 1
+--- !u!114 &1764137801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764137795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f51c9214b652a46b1c2171fe7e4798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonRaycastFix
 --- !u!1 &1770088061
 GameObject:
   m_ObjectHideFlags: 0
@@ -4246,6 +4285,7 @@ GameObject:
   - component: {fileID: 2117385677}
   - component: {fileID: 2117385676}
   - component: {fileID: 2117385675}
+  - component: {fileID: 2117385679}
   m_Layer: 0
   m_Name: MaskButton_3
   m_TagString: Untagged
@@ -4380,6 +4420,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117385673}
   m_CullTransparentMesh: 1
+--- !u!114 &2117385679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117385673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f51c9214b652a46b1c2171fe7e4798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonRaycastFix
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
