@@ -30,11 +30,14 @@ public class MaskButton : MonoBehaviour
     private Button button;
     private int currentDurability;
     private bool isSubscribed = false;
+    private bool firstCLick = true;
+    public Outline outline;
     
     private void Awake()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClicked);
+        outline = GetComponent<Outline>();
     }
     
     private void Start()
@@ -157,6 +160,13 @@ public class MaskButton : MonoBehaviour
     /// </summary>
     private void OnButtonClicked()
     {
+        if (firstCLick)
+        {
+            firstCLick = false;
+            outline.enabled = true;
+            return;
+        }
+
         if (cardData == null)
         {
             Debug.LogError($"[MaskButton] {name} has no CardData assigned!");
@@ -185,6 +195,8 @@ public class MaskButton : MonoBehaviour
         
         Debug.Log($"[MaskButton] Selected: {cardData.maskName}");
         GameManager.Instance.SelectMask(cardData);
+        firstCLick = true;
+        outline.enabled = false;
     }
     
     /// <summary>
