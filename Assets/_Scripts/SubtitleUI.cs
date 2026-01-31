@@ -87,6 +87,14 @@ namespace Interrogation.Dialogue
         /// </summary>
         public void ShowLine(string text, string speakerName, Color speakerColor, float? displayDuration = null)
         {
+            Debug.Log($"[SubtitleUI] ShowLine called: speaker={speakerName}, text={text}");
+            
+            if (subtitleText == null)
+            {
+                Debug.LogError("[SubtitleUI] subtitleText is not assigned! Please assign in Inspector.");
+                return;
+            }
+            
             StopAllSubtitleCoroutines();
 
             fullText = text;

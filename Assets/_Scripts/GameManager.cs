@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using Interrogation.Dialogue;
 
 /// <summary>
 /// Core game controller managing the interrogation flow.
@@ -72,15 +73,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log($"[GameManager] Start called. Masks: {(masks != null ? masks.Length : 0)}, Nodes: {(dialogueSequence != null ? dialogueSequence.Length : 0)}");
         
-        // Check for existing save
-        if (GameSaveData.HasSave())
+        // Check if new DialogueManager system is being used - if so, skip old system
+        if (Interrogation.Dialogue.DialogueManager.Instance != null)
         {
-            LoadGame();
+            Debug.Log("[GameManager] New DialogueManager detected - disabling old GameManager flow");
+            currentState = GameState.NotStarted;
+            return;
         }
-        else
-        {
-            StartNewGame();
-        }
+        
+        // Always start fresh - no loading saved games
+        StartNewGame();
     }
     
     /// <summary>
