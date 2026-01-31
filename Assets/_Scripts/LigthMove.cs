@@ -3,17 +3,17 @@ using UnityEngine;
 public class LigthMove : MonoBehaviour
 {
     [Header("Drift Settings")]
-    [SerializeField] private float amplitude = 0.1f;   
-    [SerializeField] private float speed = 0.5f;      
+    [SerializeField] private float amplitude = 5f;
+    [SerializeField] private float speed = 0.5f;
 
-    private Vector3 startPos;
+    private Quaternion startRot;
     private float xSeed;
     private float ySeed;
     private float zSeed;
 
     private void Awake()
     {
-        startPos = transform.localPosition;
+        startRot = transform.localRotation;
 
         xSeed = Random.value * 100f;
         ySeed = Random.value * 100f;
@@ -26,6 +26,7 @@ public class LigthMove : MonoBehaviour
         float y = (Mathf.PerlinNoise(Time.time * speed, ySeed) - 0.5f) * amplitude;
         float z = (Mathf.PerlinNoise(Time.time * speed, zSeed) - 0.5f) * amplitude;
 
-        transform.localPosition = startPos + new Vector3(x, y, z);
+        Quaternion driftRot = Quaternion.Euler(x, y, z);
+        transform.localRotation = startRot * driftRot;
     }
 }
