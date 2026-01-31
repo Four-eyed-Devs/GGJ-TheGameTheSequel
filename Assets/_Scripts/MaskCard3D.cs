@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using Unity.VisualScripting;
 
 /// <summary>
 /// 3D interactable mask card that sits on the interrogation table.
@@ -31,6 +32,8 @@ public class MaskCard3D : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private float hoverLiftHeight = 0.1f;
     [SerializeField] private float animationSpeed = 8f;
+    [SerializeField] private float clickRotation = 60f;
+    [SerializeField] private float clickLift = 0.15f;
     
     [Header("Type Colors (for accent)")]
     [SerializeField] private Color logicAccent = new Color(0.3f, 0.5f, 0.8f);
@@ -41,17 +44,23 @@ public class MaskCard3D : MonoBehaviour
     // Runtime state
     private int currentDurability;
     private bool isHovered = false;
+    private bool isSelected = false;
     private bool isInteractable = true;
     private Vector3 originalPosition;
     private Vector3 targetPosition;
+    private Quaternion originalRotation;
+    private Quaternion targetRotation;
     private Material cardMaterial;
     private bool isSubscribed = false;
+    private bool firstCLick = true;
     
     private void Awake()
     {
         originalPosition = transform.localPosition;
         targetPosition = originalPosition;
-        
+        originalRotation = transform.localRotation;
+        targetRotation = originalRotation;
+
         // Get or create material instance
         if (cardRenderer != null)
         {
@@ -114,6 +123,15 @@ public class MaskCard3D : MonoBehaviour
             transform.localPosition = Vector3.Lerp(
                 transform.localPosition, 
                 targetPosition, 
+                Time.deltaTime * animationSpeed
+            );
+        }
+
+        if (transform.localRotation != targetRotation)
+        {
+            transform.localRotation = Quaternion.Lerp(
+                transform.localRotation,
+                targetRotation,
                 Time.deltaTime * animationSpeed
             );
         }
@@ -211,7 +229,7 @@ public class MaskCard3D : MonoBehaviour
     
     public void OnHoverEnter()
     {
-        if (!isInteractable || currentDurability <= 0) return;
+        if (!isInteractable || currentDurability <= 0 || isSelected) return;
         
         isHovered = true;
         targetPosition = originalPosition + Vector3.up * hoverLiftHeight;
@@ -223,9 +241,14 @@ public class MaskCard3D : MonoBehaviour
     public void OnHoverExit()
     {
         isHovered = false;
-        targetPosition = originalPosition;
-        
-        if (isInteractable && currentDurability > 0)
+
+        if (!isSelected)
+        {
+            targetPosition = originalPosition;
+            targetRotation = originalRotation;
+        }
+
+        if (isInteractable && currentDurability > 0 && !isSelected)
         {
             SetCardColor(normalColor);
         }
@@ -236,20 +259,35 @@ public class MaskCard3D : MonoBehaviour
     public void OnCardClicked()
     {
         if (!isInteractable || currentDurability <= 0)
-        {
-            Debug.Log($"[MaskCard3D] Click ignored - Interactable: {isInteractable}, Durability: {currentDurability}");
             return;
-        }
-        
+
+        isSelected = true;
+
         Debug.Log($"[MaskCard3D] Clicked: {cardData?.maskName}");
         SelectCard();
     }
-    
+
+    public void SetHover()
+    {
+        targetPosition = originalPosition + Vector3.up * clickLift;
+
+        targetRotation = originalRotation * Quaternion.Euler(-clickRotation, 0f, 0f);
+    }
+
     /// <summary>
     /// Called when player selects this card.
     /// </summary>
     private void SelectCard()
     {
+        if (firstCLick)
+        {
+            firstCLick = false;
+
+            CardInputHandler.Instance.UpdateCardPos(this);
+
+            return;
+        }
+
         if (cardData == null)
         {
             Debug.LogError($"[MaskCard3D] {name} has no CardData assigned!");
@@ -270,13 +308,28 @@ public class MaskCard3D : MonoBehaviour
         
         // Visual feedback
         SetCardColor(selectedColor);
-        
-        // Notify GameManager
-        GameManager.Instance.SelectMask(cardData);
+
+        CardInputHandler.Instance.UpdateCardPos(this);
+
+        firstCLick = true;
     }
-    
+
+    public void DeselectCard()
+    {
+        isSelected = false;
+        isHovered = false;
+
+        targetPosition = originalPosition;
+        targetRotation = originalRotation;
+
+        if (isInteractable && currentDurability > 0)
+        {
+            SetCardColor(normalColor);
+        }
+    }
+
     // === Event Handlers ===
-    
+
     private void HandleDurabilityChanged(MaskType type, int newDurability)
     {
         if (cardData != null && cardData.maskType == type)

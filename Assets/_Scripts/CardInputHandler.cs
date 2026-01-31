@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class CardInputHandler : MonoBehaviour
 {
+    public static CardInputHandler Instance { get; private set;}
+
     [Header("Raycast Settings")]
     [SerializeField] private Camera mainCamera;
     [SerializeField] private LayerMask cardLayerMask = -1; // -1 = Everything
@@ -15,10 +17,21 @@ public class CardInputHandler : MonoBehaviour
     
     [Header("Debug")]
     [SerializeField] private bool showDebugRay = true;
-    
+
+    private MaskCard3D currentMaskCard;
+
     private MaskCard3D currentHoveredCard;
     private Mouse mouse;
-    
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
     private void Start()
     {
         mouse = Mouse.current;
@@ -102,7 +115,32 @@ public class CardInputHandler : MonoBehaviour
             currentHoveredCard = null;
         }
     }
-    
+
+    public void UpdateCardPos(MaskCard3D selectedCard)
+    {
+        if (!currentMaskCard)
+        {
+            currentMaskCard = selectedCard;
+            selectedCard.SetHover();
+            return;
+        }
+
+        if (currentMaskCard == selectedCard)
+        {
+            Debug.Log($"[MaskButton] Selected: {selectedCard.cardData.maskName}");
+            GameManager.Instance.SelectMask(selectedCard.cardData);
+            selectedCard.DeselectCard();
+            currentMaskCard = null;
+        }
+        else if (currentMaskCard != selectedCard)
+        {
+            currentMaskCard.DeselectCard();
+            selectedCard.SetHover();
+            currentMaskCard = selectedCard;
+        }
+    }
+
+
     private void HandleClick()
     {
         if (mouse.leftButton.wasPressedThisFrame)
