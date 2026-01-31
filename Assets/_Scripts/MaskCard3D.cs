@@ -271,7 +271,7 @@ public class MaskCard3D : MonoBehaviour
     {
         targetPosition = originalPosition + Vector3.up * clickLift;
 
-        targetRotation = originalRotation * Quaternion.Euler(-clickRotation, 0f, 0f);
+        targetRotation = originalRotation * Quaternion.Euler(clickRotation, 0f, 0f);
     }
 
     /// <summary>
