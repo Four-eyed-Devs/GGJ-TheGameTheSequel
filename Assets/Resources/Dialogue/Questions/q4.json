@@ -1,0 +1,80 @@
+{
+    "question": {
+        "questionId": 4,
+        "correctMask": "Charm",
+        "investigatorQuestion": {
+            "text": "Multiple witnesses say they saw you arguing with the victim that week. What was that about?",
+            "voiceClipPath": "Voice/Investigator/q4_question"
+        },
+        "maskAnswers": [
+            {
+                "maskType": "Logic",
+                "isCorrect": false,
+                "playerLine": "It was a minor disagreement about project deadlines. I can provide documentation of our professional correspondence.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Witnesses described it as heated, not minor.", "voiceClipPath": "Voice/Investigator/q4_logic_low_01" },
+                        { "text": "Documentation doesn't capture raised voices.", "voiceClipPath": "Voice/Investigator/q4_logic_low_02" },
+                        { "text": "You're deflecting. What were you really fighting about?", "voiceClipPath": "Voice/Investigator/q4_logic_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "Deadlines can be stressful. I understand.", "voiceClipPath": "Voice/Investigator/q4_logic_high_01" },
+                        { "text": "Work disagreements happen. Was it resolved?", "voiceClipPath": "Voice/Investigator/q4_logic_high_02" },
+                        { "text": "Professional conflicts are normal. Go on.", "voiceClipPath": "Voice/Investigator/q4_logic_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Emotion",
+                "isCorrect": false,
+                "playerLine": "We had a misunderstanding. I said things I didn't mean. I wish I could take it back now...",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "What things? What did you say exactly?", "voiceClipPath": "Voice/Investigator/q4_emotion_low_01" },
+                        { "text": "Regret is interesting. What are you regretting?", "voiceClipPath": "Voice/Investigator/q4_emotion_low_02" },
+                        { "text": "Wishes don't change what happened.", "voiceClipPath": "Voice/Investigator/q4_emotion_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "We all say things we regret sometimes.", "voiceClipPath": "Voice/Investigator/q4_emotion_high_01" },
+                        { "text": "That's understandable. What was the topic?", "voiceClipPath": "Voice/Investigator/q4_emotion_high_02" },
+                        { "text": "Arguments happen. It doesn't mean anything.", "voiceClipPath": "Voice/Investigator/q4_emotion_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Aggression",
+                "isCorrect": false,
+                "playerLine": "People argue! It doesn't mean I killed anyone! This is ridiculous!",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "No one said anything about killing. Interesting leap.", "voiceClipPath": "Voice/Investigator/q4_aggression_low_01" },
+                        { "text": "Your temper is showing again. Was it like this that night?", "voiceClipPath": "Voice/Investigator/q4_aggression_low_02" },
+                        { "text": "Defensive reactions suggest something to hide.", "voiceClipPath": "Voice/Investigator/q4_aggression_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "You're right, arguments aren't proof of anything.", "voiceClipPath": "Voice/Investigator/q4_aggression_high_01" },
+                        { "text": "I understand your frustration. Let's continue.", "voiceClipPath": "Voice/Investigator/q4_aggression_high_02" },
+                        { "text": "Fair enough. But I still need details.", "voiceClipPath": "Voice/Investigator/q4_aggression_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Charm",
+                "isCorrect": true,
+                "playerLine": "You know how it is, Detective. Two passionate people, strong opinions. We always made up afterward. It was just our dynamic.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "A dynamic that ended in death? Interesting.", "voiceClipPath": "Voice/Investigator/q4_charm_low_01" },
+                        { "text": "Passion can turn violent. Did it?", "voiceClipPath": "Voice/Investigator/q4_charm_low_02" },
+                        { "text": "Don't try to normalize this.", "voiceClipPath": "Voice/Investigator/q4_charm_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "I understand. Some people just communicate differently.", "voiceClipPath": "Voice/Investigator/q4_charm_high_01" },
+                        { "text": "Fair enough. It takes all kinds.", "voiceClipPath": "Voice/Investigator/q4_charm_high_02" },
+                        { "text": "As long as it was just words. Continue.", "voiceClipPath": "Voice/Investigator/q4_charm_high_03" }
+                    ]
+                }
+            }
+        ]
+    }
+}

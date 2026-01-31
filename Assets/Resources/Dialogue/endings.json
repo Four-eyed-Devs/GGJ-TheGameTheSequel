@@ -1,0 +1,28 @@
+{
+    "goodEnding": {
+        "endingType": "good",
+        "lines": [
+            {
+                "text": "Well... I have to admit, your story checks out.",
+                "voiceClipPath": "Voice/Investigator/ending_good_01"
+            },
+            {
+                "text": "You're free to go. For now.",
+                "voiceClipPath": "Voice/Investigator/ending_good_02"
+            }
+        ]
+    },
+    "badEnding": {
+        "endingType": "bad",
+        "lines": [
+            {
+                "text": "Your story doesn't add up. I think we both know what happened here.",
+                "voiceClipPath": "Voice/Investigator/ending_bad_01"
+            },
+            {
+                "text": "I'm placing you under arrest. You have the right to remain silent...",
+                "voiceClipPath": "Voice/Investigator/ending_bad_02"
+            }
+        ]
+    }
+}

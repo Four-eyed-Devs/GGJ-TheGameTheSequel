@@ -1,0 +1,16 @@
+{
+    "introVariants": [
+        {
+            "text": "Please, have a seat. I just have a few questions for you.",
+            "voiceClipPath": "Voice/Investigator/intro_01"
+        },
+        {
+            "text": "Thank you for coming in. This shouldn't take long... if you cooperate.",
+            "voiceClipPath": "Voice/Investigator/intro_02"
+        },
+        {
+            "text": "I've been looking forward to this conversation. Let's get started, shall we?",
+            "voiceClipPath": "Voice/Investigator/intro_03"
+        }
+    ]
+}

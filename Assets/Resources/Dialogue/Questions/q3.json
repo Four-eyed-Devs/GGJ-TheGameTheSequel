@@ -1,0 +1,80 @@
+{
+    "question": {
+        "questionId": 3,
+        "correctMask": "Aggression",
+        "investigatorQuestion": {
+            "text": "We found your fingerprints at the scene. Care to explain?",
+            "voiceClipPath": "Voice/Investigator/q3_question"
+        },
+        "maskAnswers": [
+            {
+                "maskType": "Logic",
+                "isCorrect": false,
+                "playerLine": "That's to be expected. I visited there regularly for work purposes.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Work purposes? At 2 AM?", "voiceClipPath": "Voice/Investigator/q3_logic_low_01" },
+                        { "text": "Your fingerprints were on the murder weapon.", "voiceClipPath": "Voice/Investigator/q3_logic_low_02" },
+                        { "text": "Expected, you say? Interesting choice of words.", "voiceClipPath": "Voice/Investigator/q3_logic_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "Fair point. When was your last visit there?", "voiceClipPath": "Voice/Investigator/q3_logic_high_01" },
+                        { "text": "We'll need to narrow down the timeline.", "voiceClipPath": "Voice/Investigator/q3_logic_high_02" },
+                        { "text": "That's reasonable. Can anyone confirm your visits?", "voiceClipPath": "Voice/Investigator/q3_logic_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Emotion",
+                "isCorrect": false,
+                "playerLine": "Oh god... I was there. But not when it happened! You have to believe me!",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Panicking won't help you. When were you there?", "voiceClipPath": "Voice/Investigator/q3_emotion_low_01" },
+                        { "text": "Interesting. You just admitted to being at the scene.", "voiceClipPath": "Voice/Investigator/q3_emotion_low_02" },
+                        { "text": "Your distress is noted. Now tell me more.", "voiceClipPath": "Voice/Investigator/q3_emotion_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "Calm down. Just tell me when you were there.", "voiceClipPath": "Voice/Investigator/q3_emotion_high_01" },
+                        { "text": "I'm listening. Explain the circumstances.", "voiceClipPath": "Voice/Investigator/q3_emotion_high_02" },
+                        { "text": "Take a breath. We'll sort this out.", "voiceClipPath": "Voice/Investigator/q3_emotion_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Aggression",
+                "isCorrect": true,
+                "playerLine": "Of course my prints are there! I've been there dozens of times! This is a setup and you know it!",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "A setup? That's quite the accusation.", "voiceClipPath": "Voice/Investigator/q3_aggression_low_01" },
+                        { "text": "Your anger doesn't prove your innocence.", "voiceClipPath": "Voice/Investigator/q3_aggression_low_02" },
+                        { "text": "Interesting theory. Who would frame you?", "voiceClipPath": "Voice/Investigator/q3_aggression_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "You're right, that alone isn't conclusive evidence.", "voiceClipPath": "Voice/Investigator/q3_aggression_high_01" },
+                        { "text": "Fair point. Prints alone don't prove anything.", "voiceClipPath": "Voice/Investigator/q3_aggression_high_02" },
+                        { "text": "Your frustration is understandable. Let's move on.", "voiceClipPath": "Voice/Investigator/q3_aggression_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Charm",
+                "isCorrect": false,
+                "playerLine": "Detective, I'm an open book. I've got nothing to hide. Check all the prints you want.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Open book? Then why does your story keep changing?", "voiceClipPath": "Voice/Investigator/q3_charm_low_01" },
+                        { "text": "That confidence concerns me more than it reassures.", "voiceClipPath": "Voice/Investigator/q3_charm_low_02" },
+                        { "text": "We will. And we'll find the truth.", "voiceClipPath": "Voice/Investigator/q3_charm_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "I appreciate your cooperation.", "voiceClipPath": "Voice/Investigator/q3_charm_high_01" },
+                        { "text": "Good. Transparency helps everyone.", "voiceClipPath": "Voice/Investigator/q3_charm_high_02" },
+                        { "text": "We'll take you up on that. Continue.", "voiceClipPath": "Voice/Investigator/q3_charm_high_03" }
+                    ]
+                }
+            }
+        ]
+    }
+}

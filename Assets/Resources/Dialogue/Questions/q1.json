@@ -1,0 +1,80 @@
+{
+    "question": {
+        "questionId": 1,
+        "correctMask": "Logic",
+        "investigatorQuestion": {
+            "text": "Where were you on the night of the incident?",
+            "voiceClipPath": "Voice/Investigator/q1_question"
+        },
+        "maskAnswers": [
+            {
+                "maskType": "Logic",
+                "isCorrect": true,
+                "playerLine": "I was at home, working late. I have timestamps on my computer files that can verify this.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Hmm, convenient. But timestamps can be faked.", "voiceClipPath": "Voice/Investigator/q1_logic_low_01" },
+                        { "text": "We'll need to verify that with your IT department.", "voiceClipPath": "Voice/Investigator/q1_logic_low_02" },
+                        { "text": "A likely story. We've heard that one before.", "voiceClipPath": "Voice/Investigator/q1_logic_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "That's... actually quite helpful. We can work with that.", "voiceClipPath": "Voice/Investigator/q1_logic_high_01" },
+                        { "text": "Digital evidence. Good. We'll verify this promptly.", "voiceClipPath": "Voice/Investigator/q1_logic_high_02" },
+                        { "text": "Finally, someone who keeps records. Continue.", "voiceClipPath": "Voice/Investigator/q1_logic_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Emotion",
+                "isCorrect": false,
+                "playerLine": "I... I was alone. It's been so hard since everything happened. I just needed time to think.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Spare me the tears. I've seen better performances.", "voiceClipPath": "Voice/Investigator/q1_emotion_low_01" },
+                        { "text": "Emotional deflection won't work here.", "voiceClipPath": "Voice/Investigator/q1_emotion_low_02" },
+                        { "text": "You're going to have to do better than that.", "voiceClipPath": "Voice/Investigator/q1_emotion_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "I understand it's difficult, but I need specifics.", "voiceClipPath": "Voice/Investigator/q1_emotion_high_01" },
+                        { "text": "Take your time, but I still need an answer.", "voiceClipPath": "Voice/Investigator/q1_emotion_high_02" },
+                        { "text": "Being alone isn't an alibi. Where exactly?", "voiceClipPath": "Voice/Investigator/q1_emotion_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Aggression",
+                "isCorrect": false,
+                "playerLine": "Why does it matter? You've already made up your mind about me!",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Defensive, are we? That's very telling.", "voiceClipPath": "Voice/Investigator/q1_aggression_low_01" },
+                        { "text": "Anger won't help your case. Answer the question.", "voiceClipPath": "Voice/Investigator/q1_aggression_low_02" },
+                        { "text": "Interesting reaction for an innocent person.", "voiceClipPath": "Voice/Investigator/q1_aggression_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "I haven't made up my mind. That's why I'm asking.", "voiceClipPath": "Voice/Investigator/q1_aggression_high_01" },
+                        { "text": "Calm down. I'm just doing my job here.", "voiceClipPath": "Voice/Investigator/q1_aggression_high_02" },
+                        { "text": "Let's stay civil. Where were you?", "voiceClipPath": "Voice/Investigator/q1_aggression_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Charm",
+                "isCorrect": false,
+                "playerLine": "Detective, I'm sure someone of your experience can tell I'm being completely honest here.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Flattery? Really? That's your play?", "voiceClipPath": "Voice/Investigator/q1_charm_low_01" },
+                        { "text": "Don't try to butter me up. Just answer.", "voiceClipPath": "Voice/Investigator/q1_charm_low_02" },
+                        { "text": "I've been doing this too long for charm to work.", "voiceClipPath": "Voice/Investigator/q1_charm_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "Flattering, but I still need a straight answer.", "voiceClipPath": "Voice/Investigator/q1_charm_high_01" },
+                        { "text": "I appreciate the compliment, but where were you?", "voiceClipPath": "Voice/Investigator/q1_charm_high_02" },
+                        { "text": "Charming. Now, your location that night?", "voiceClipPath": "Voice/Investigator/q1_charm_high_03" }
+                    ]
+                }
+            }
+        ]
+    }
+}

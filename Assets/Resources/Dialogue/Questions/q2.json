@@ -1,0 +1,80 @@
+{
+    "question": {
+        "questionId": 2,
+        "correctMask": "Emotion",
+        "investigatorQuestion": {
+            "text": "Tell me about your relationship with the victim.",
+            "voiceClipPath": "Voice/Investigator/q2_question"
+        },
+        "maskAnswers": [
+            {
+                "maskType": "Logic",
+                "isCorrect": false,
+                "playerLine": "We were business associates. Our interactions were strictly professional and documented.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Cold. Very cold. No emotion at all about their death?", "voiceClipPath": "Voice/Investigator/q2_logic_low_01" },
+                        { "text": "Professional? Is that why witnesses saw you arguing?", "voiceClipPath": "Voice/Investigator/q2_logic_low_02" },
+                        { "text": "That clinical response is rather disturbing.", "voiceClipPath": "Voice/Investigator/q2_logic_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "Just business? Nothing more personal?", "voiceClipPath": "Voice/Investigator/q2_logic_high_01" },
+                        { "text": "I see. And how did you feel when you heard what happened?", "voiceClipPath": "Voice/Investigator/q2_logic_high_02" },
+                        { "text": "Documented, you say. We'll look into that.", "voiceClipPath": "Voice/Investigator/q2_logic_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Emotion",
+                "isCorrect": true,
+                "playerLine": "They were... they were my friend. I still can't believe they're gone. We had our differences, but I cared about them.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Friends who had differences. How convenient.", "voiceClipPath": "Voice/Investigator/q2_emotion_low_01" },
+                        { "text": "What kind of differences? The violent kind?", "voiceClipPath": "Voice/Investigator/q2_emotion_low_02" },
+                        { "text": "Grief can be a great mask for guilt.", "voiceClipPath": "Voice/Investigator/q2_emotion_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "I'm sorry for your loss. This must be difficult.", "voiceClipPath": "Voice/Investigator/q2_emotion_high_01" },
+                        { "text": "It's clear this affects you. Take a moment if you need.", "voiceClipPath": "Voice/Investigator/q2_emotion_high_02" },
+                        { "text": "I understand. Losing someone is never easy.", "voiceClipPath": "Voice/Investigator/q2_emotion_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Aggression",
+                "isCorrect": false,
+                "playerLine": "What are you implying? That I had something to do with this?!",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "I'm not implying anything. Your reaction is.", "voiceClipPath": "Voice/Investigator/q2_aggression_low_01" },
+                        { "text": "Guilt has a way of making people defensive.", "voiceClipPath": "Voice/Investigator/q2_aggression_low_02" },
+                        { "text": "That temper of yours... is that what happened that night?", "voiceClipPath": "Voice/Investigator/q2_aggression_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "I'm not accusing you. I'm just gathering information.", "voiceClipPath": "Voice/Investigator/q2_aggression_high_01" },
+                        { "text": "Easy. This is standard procedure for everyone.", "voiceClipPath": "Voice/Investigator/q2_aggression_high_02" },
+                        { "text": "No implications. Just facts. Tell me about them.", "voiceClipPath": "Voice/Investigator/q2_aggression_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Charm",
+                "isCorrect": false,
+                "playerLine": "We got along wonderfully. Everyone loved them. I'm sure you'll find only positive things about our relationship.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Too positive. You're hiding something.", "voiceClipPath": "Voice/Investigator/q2_charm_low_01" },
+                        { "text": "No relationship is that perfect. What aren't you telling me?", "voiceClipPath": "Voice/Investigator/q2_charm_low_02" },
+                        { "text": "That sounds rehearsed. Try again with the truth.", "voiceClipPath": "Voice/Investigator/q2_charm_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "All positive? No disagreements at all?", "voiceClipPath": "Voice/Investigator/q2_charm_high_01" },
+                        { "text": "That's nice to hear, but I need specifics.", "voiceClipPath": "Voice/Investigator/q2_charm_high_02" },
+                        { "text": "Good relationships don't mean anything in an investigation.", "voiceClipPath": "Voice/Investigator/q2_charm_high_03" }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "question": {
+        "questionId": 6,
+        "correctMask": "Emotion",
+        "investigatorQuestion": {
+            "text": "One last question. Did you kill them?",
+            "voiceClipPath": "Voice/Investigator/q6_question"
+        },
+        "maskAnswers": [
+            {
+                "maskType": "Logic",
+                "isCorrect": false,
+                "playerLine": "No. I have provided evidence and alibis that prove my innocence. The facts speak for themselves.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Cold to the end. No emotion at all.", "voiceClipPath": "Voice/Investigator/q6_logic_low_01" },
+                        { "text": "Facts can be fabricated. Emotions are harder to fake.", "voiceClipPath": "Voice/Investigator/q6_logic_low_02" },
+                        { "text": "That robotic response tells me everything.", "voiceClipPath": "Voice/Investigator/q6_logic_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "Your evidence is compelling. I'll review it.", "voiceClipPath": "Voice/Investigator/q6_logic_high_01" },
+                        { "text": "Fair enough. The facts will determine the outcome.", "voiceClipPath": "Voice/Investigator/q6_logic_high_02" },
+                        { "text": "Logical approach. We'll see what holds up.", "voiceClipPath": "Voice/Investigator/q6_logic_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Emotion",
+                "isCorrect": true,
+                "playerLine": "No! How could you even ask me that? They were my friend! I would never... I could never hurt them.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Convincing performance. But I've seen better.", "voiceClipPath": "Voice/Investigator/q6_emotion_low_01" },
+                        { "text": "Those tears won't save you now.", "voiceClipPath": "Voice/Investigator/q6_emotion_low_02" },
+                        { "text": "Everyone says that. Not everyone means it.", "voiceClipPath": "Voice/Investigator/q6_emotion_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "I had to ask. It's my job.", "voiceClipPath": "Voice/Investigator/q6_emotion_high_01" },
+                        { "text": "Your reaction seems genuine. I'll note that.", "voiceClipPath": "Voice/Investigator/q6_emotion_high_02" },
+                        { "text": "I believe you. But the investigation continues.", "voiceClipPath": "Voice/Investigator/q6_emotion_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Aggression",
+                "isCorrect": false,
+                "playerLine": "Absolutely not! And I'm done with these accusations! Either charge me or let me go!",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Demanding to leave? That's suspicious.", "voiceClipPath": "Voice/Investigator/q6_aggression_low_01" },
+                        { "text": "Only guilty people demand to leave mid-interrogation.", "voiceClipPath": "Voice/Investigator/q6_aggression_low_02" },
+                        { "text": "Oh, we'll be charging you alright.", "voiceClipPath": "Voice/Investigator/q6_aggression_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "I understand your frustration. We're almost done.", "voiceClipPath": "Voice/Investigator/q6_aggression_high_01" },
+                        { "text": "Fair enough. You've been cooperative.", "voiceClipPath": "Voice/Investigator/q6_aggression_high_02" },
+                        { "text": "Your patience is noted. Just one more moment.", "voiceClipPath": "Voice/Investigator/q6_aggression_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Charm",
+                "isCorrect": false,
+                "playerLine": "Detective, after everything we've discussed, do you really think I'm capable of that? You know me better by now.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "I don't know you at all. That's the problem.", "voiceClipPath": "Voice/Investigator/q6_charm_low_01" },
+                        { "text": "Killers often seem the most charming.", "voiceClipPath": "Voice/Investigator/q6_charm_low_02" },
+                        { "text": "Nice try. But charm doesn't equal innocence.", "voiceClipPath": "Voice/Investigator/q6_charm_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "You've made a good impression. But impressions aren't evidence.", "voiceClipPath": "Voice/Investigator/q6_charm_high_01" },
+                        { "text": "I'm forming my opinion. Let the evidence speak.", "voiceClipPath": "Voice/Investigator/q6_charm_high_02" },
+                        { "text": "We'll see. Thank you for your cooperation.", "voiceClipPath": "Voice/Investigator/q6_charm_high_03" }
+                    ]
+                }
+            }
+        ]
+    }
+}

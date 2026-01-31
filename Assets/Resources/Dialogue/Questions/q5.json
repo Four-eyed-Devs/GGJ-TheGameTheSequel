@@ -1,0 +1,80 @@
+{
+    "question": {
+        "questionId": 5,
+        "correctMask": "Logic",
+        "investigatorQuestion": {
+            "text": "The victim's phone records show multiple calls from your number that night. Why were you calling them?",
+            "voiceClipPath": "Voice/Investigator/q5_question"
+        },
+        "maskAnswers": [
+            {
+                "maskType": "Logic",
+                "isCorrect": true,
+                "playerLine": "We were coordinating on a time-sensitive project. I can show you the emails that prompted those calls.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "At midnight? What project runs that late?", "voiceClipPath": "Voice/Investigator/q5_logic_low_01" },
+                        { "text": "Show me these emails. We'll verify them.", "voiceClipPath": "Voice/Investigator/q5_logic_low_02" },
+                        { "text": "Convenient documentation. Almost too convenient.", "voiceClipPath": "Voice/Investigator/q5_logic_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "That would be helpful. Please forward those.", "voiceClipPath": "Voice/Investigator/q5_logic_high_01" },
+                        { "text": "Work calls make sense. We'll confirm.", "voiceClipPath": "Voice/Investigator/q5_logic_high_02" },
+                        { "text": "Good. Documentation always helps clear things up.", "voiceClipPath": "Voice/Investigator/q5_logic_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Emotion",
+                "isCorrect": false,
+                "playerLine": "I was worried about them! They'd been acting strange lately. I just wanted to check in...",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Strange how? Were they afraid of someone?", "voiceClipPath": "Voice/Investigator/q5_emotion_low_01" },
+                        { "text": "Multiple calls from a worried friend... or a stalker?", "voiceClipPath": "Voice/Investigator/q5_emotion_low_02" },
+                        { "text": "Worried enough to call six times in an hour?", "voiceClipPath": "Voice/Investigator/q5_emotion_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "That's concerning. What seemed strange to you?", "voiceClipPath": "Voice/Investigator/q5_emotion_high_01" },
+                        { "text": "A caring friend. Did they answer any calls?", "voiceClipPath": "Voice/Investigator/q5_emotion_high_02" },
+                        { "text": "Your concern seems genuine. What were they worried about?", "voiceClipPath": "Voice/Investigator/q5_emotion_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Aggression",
+                "isCorrect": false,
+                "playerLine": "So what? I call people! It's not a crime to use a phone!",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Six calls in one hour before they died? That's not normal.", "voiceClipPath": "Voice/Investigator/q5_aggression_low_01" },
+                        { "text": "Your hostility is telling me a lot.", "voiceClipPath": "Voice/Investigator/q5_aggression_low_02" },
+                        { "text": "Evading the question only makes you look guilty.", "voiceClipPath": "Voice/Investigator/q5_aggression_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "You're right, but I need to understand the context.", "voiceClipPath": "Voice/Investigator/q5_aggression_high_01" },
+                        { "text": "No one's accusing you. Just explain the calls.", "voiceClipPath": "Voice/Investigator/q5_aggression_high_02" },
+                        { "text": "Relax. I'm just following up on the records.", "voiceClipPath": "Voice/Investigator/q5_aggression_high_03" }
+                    ]
+                }
+            },
+            {
+                "maskType": "Charm",
+                "isCorrect": false,
+                "playerLine": "We talked all the time, Detective. Best friends do that. I'm sure your records show plenty of friendly chats.",
+                "reactions": {
+                    "lowTension": [
+                        { "text": "Best friends? Earlier you said business associates.", "voiceClipPath": "Voice/Investigator/q5_charm_low_01" },
+                        { "text": "Your story keeps changing. Which is it?", "voiceClipPath": "Voice/Investigator/q5_charm_low_02" },
+                        { "text": "Friendly chats don't usually end in unanswered calls.", "voiceClipPath": "Voice/Investigator/q5_charm_low_03" }
+                    ],
+                    "highTension": [
+                        { "text": "Close friends, I see. What did you discuss?", "voiceClipPath": "Voice/Investigator/q5_charm_high_01" },
+                        { "text": "Regular communication. That's understandable.", "voiceClipPath": "Voice/Investigator/q5_charm_high_02" },
+                        { "text": "Did they pick up? What was the conversation about?", "voiceClipPath": "Voice/Investigator/q5_charm_high_03" }
+                    ]
+                }
+            }
+        ]
+    }
+}

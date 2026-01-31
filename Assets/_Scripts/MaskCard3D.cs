@@ -2,16 +2,22 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 using Unity.VisualScripting;
+using Interrogation.Dialogue;
 
 /// <summary>
 /// 3D interactable mask card that sits on the interrogation table.
 /// Requires a Collider component for mouse/raycast detection.
+/// Integrates with DialogueManager for interrogation flow.
 /// </summary>
 [RequireComponent(typeof(Collider))]
 public class MaskCard3D : MonoBehaviour
 {
     [Header("Card Data")]
     public CardData cardData;
+    
+    [Header("New Dialogue System")]
+    [Tooltip("The mask type for the new dialogue system")]
+    [SerializeField] private Interrogation.Dialogue.MaskType dialogueMaskType;
     
     [Header("Visual References")]
     [Tooltip("TextMeshPro for displaying mask name (optional)")]
@@ -46,16 +52,24 @@ public class MaskCard3D : MonoBehaviour
     
     // Runtime state
     private int currentDurability;
+    private int usesRemaining = 2; // New dialogue system: max 2 uses per mask
     private bool isHovered = false;
     private bool isSelected = false;
     private bool isInteractable = true;
+    private bool isDepleted = false; // For new dialogue system
     private Vector3 originalPosition;
     private Vector3 targetPosition;
     private Quaternion originalRotation;
     private Quaternion targetRotation;
     private Material cardMaterial;
     private bool isSubscribed = false;
+    private bool isDialogueSubscribed = false;
     private bool firstCLick = true;
+    
+    // Properties
+    public Interrogation.Dialogue.MaskType DialogueMaskType => dialogueMaskType;
+    public int UsesRemaining => usesRemaining;
+    public bool IsDepleted => isDepleted;
     
     private void Awake()
     {
@@ -83,9 +97,20 @@ public class MaskCard3D : MonoBehaviour
         if (cardData != null)
         {
             Initialize(cardData);
+            
+            // Auto-assign dialogue mask type from CardData if not set
+            if (cardData.maskType == global::MaskType.Logic)
+                dialogueMaskType = Interrogation.Dialogue.MaskType.Logic;
+            else if (cardData.maskType == global::MaskType.Emotion)
+                dialogueMaskType = Interrogation.Dialogue.MaskType.Emotion;
+            else if (cardData.maskType == global::MaskType.Aggression)
+                dialogueMaskType = Interrogation.Dialogue.MaskType.Aggression;
+            else if (cardData.maskType == global::MaskType.Charm)
+                dialogueMaskType = Interrogation.Dialogue.MaskType.Charm;
         }
         
         SubscribeToEvents();
+        SubscribeToDialogueEvents();
         
         if (GameManager.Instance != null)
         {
@@ -103,12 +128,28 @@ public class MaskCard3D : MonoBehaviour
         Debug.Log($"[MaskCard3D] {(cardData != null ? cardData.maskName : name)} subscribed to GameManager");
     }
     
+    private void SubscribeToDialogueEvents()
+    {
+        if (isDialogueSubscribed || DialogueManager.Instance == null) return;
+        
+        DialogueManager.Instance.OnMaskSelectionEnabled += HandleMaskSelectionEnabled;
+        DialogueManager.Instance.OnMaskSelectionDisabled += HandleMaskSelectionDisabled;
+        isDialogueSubscribed = true;
+        Debug.Log($"[MaskCard3D] {(cardData != null ? cardData.maskName : name)} subscribed to DialogueManager");
+    }
+    
     private void OnDestroy()
     {
         if (isSubscribed && GameManager.Instance != null)
         {
             GameManager.Instance.OnMaskDurabilityChanged -= HandleDurabilityChanged;
             GameManager.Instance.OnGameStateChanged -= HandleGameStateChanged;
+        }
+        
+        if (isDialogueSubscribed && DialogueManager.Instance != null)
+        {
+            DialogueManager.Instance.OnMaskSelectionEnabled -= HandleMaskSelectionEnabled;
+            DialogueManager.Instance.OnMaskSelectionDisabled -= HandleMaskSelectionDisabled;
         }
         
         // Clean up material instance
@@ -168,17 +209,34 @@ public class MaskCard3D : MonoBehaviour
     
     private void UpdateDurabilityDisplay()
     {
-        if (durabilityText != null && cardData != null)
+        if (durabilityText != null)
         {
-            durabilityText.text = $"{currentDurability}/{cardData.maxDurability}";
-        }
-        
-        bool isBroken = currentDurability <= 0;
-        
-        if (isBroken)
-        {
-            SetCardColor(disabledColor);
-            isInteractable = false;
+            // Check if using new dialogue system
+            if (DialogueManager.Instance != null)
+            {
+                int remaining = DialogueManager.Instance.GetMaskRemainingUses(dialogueMaskType);
+                durabilityText.text = $"{remaining}/2";
+                
+                bool isBroken = remaining <= 0;
+                if (isBroken)
+                {
+                    SetCardColor(disabledColor);
+                    isInteractable = false;
+                    isDepleted = true;
+                }
+            }
+            else if (cardData != null)
+            {
+                // Legacy system
+                durabilityText.text = $"{currentDurability}/{cardData.maxDurability}";
+                
+                bool isBroken = currentDurability <= 0;
+                if (isBroken)
+                {
+                    SetCardColor(disabledColor);
+                    isInteractable = false;
+                }
+            }
         }
     }
     
@@ -293,6 +351,14 @@ public class MaskCard3D : MonoBehaviour
             return;
         }
 
+        // Check if using new DialogueManager system
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsWaitingForMask)
+        {
+            SelectCardForDialogue();
+            return;
+        }
+
+        // Legacy GameManager support
         if (cardData == null)
         {
             Debug.LogError($"[MaskCard3D] {name} has no CardData assigned!");
@@ -316,6 +382,43 @@ public class MaskCard3D : MonoBehaviour
 
         CardInputHandler.Instance.UpdateCardPos(this);
 
+        firstCLick = true;
+    }
+    
+    /// <summary>
+    /// Called when card is selected during new dialogue system flow
+    /// </summary>
+    private void SelectCardForDialogue()
+    {
+        // Check if mask can still be used (2 uses max)
+        if (!DialogueManager.Instance.CanUseMask(dialogueMaskType))
+        {
+            Debug.LogWarning($"[MaskCard3D] {cardData?.maskName} is depleted and cannot be used!");
+            return;
+        }
+        
+        Debug.Log($"[MaskCard3D] Selected mask for dialogue: {dialogueMaskType}");
+        
+        // Visual feedback
+        SetCardColor(selectedColor);
+        
+        // Update uses remaining
+        usesRemaining = DialogueManager.Instance.GetMaskRemainingUses(dialogueMaskType) - 1;
+        
+        // Notify DialogueManager
+        DialogueManager.Instance.OnMaskSelected(dialogueMaskType);
+        
+        // Check if this was the last use
+        if (usesRemaining <= 0)
+        {
+            isDepleted = true;
+            PlayBreakEffect();
+        }
+        
+        // Update display
+        UpdateDurabilityDisplay();
+        
+        CardInputHandler.Instance?.UpdateCardPos(this);
         firstCLick = true;
     }
 
@@ -361,6 +464,44 @@ public class MaskCard3D : MonoBehaviour
         }
         
         Debug.Log($"[MaskCard3D] {cardData?.maskName} - State: {newState}, Interactable: {isInteractable}");
+    }
+    
+    // === New Dialogue System Event Handlers ===
+    
+    private void HandleMaskSelectionEnabled()
+    {
+        // Check if this mask can still be used
+        if (DialogueManager.Instance != null)
+        {
+            bool canUse = DialogueManager.Instance.CanUseMask(dialogueMaskType);
+            isInteractable = canUse;
+            isDepleted = !canUse;
+            
+            if (!canUse)
+            {
+                SetCardColor(disabledColor);
+            }
+            else
+            {
+                SetCardColor(normalColor);
+            }
+            
+            UpdateDurabilityDisplay();
+        }
+        
+        Debug.Log($"[MaskCard3D] {cardData?.maskName} - Mask selection enabled, Interactable: {isInteractable}");
+    }
+    
+    private void HandleMaskSelectionDisabled()
+    {
+        isInteractable = false;
+        
+        if (!isHovered && !isSelected)
+        {
+            SetCardColor(isDepleted ? disabledColor : normalColor);
+        }
+        
+        Debug.Log($"[MaskCard3D] {cardData?.maskName} - Mask selection disabled");
     }
     
     private void PlayBreakEffect()
