@@ -163,7 +163,7 @@ public class MaskButton : MonoBehaviour
         if (firstCLick)
         {
             firstCLick = false;
-            outline.enabled = true;
+            UIManager.Instance.UpdateButtonOutline(this);
             return;
         }
 
@@ -192,11 +192,8 @@ public class MaskButton : MonoBehaviour
             Debug.LogWarning($"[MaskButton] Cannot select - game state is {GameManager.Instance.CurrentState}");
             return;
         }
-        
-        Debug.Log($"[MaskButton] Selected: {cardData.maskName}");
-        GameManager.Instance.SelectMask(cardData);
+        UIManager.Instance.UpdateButtonOutline(this);
         firstCLick = true;
-        outline.enabled = false;
     }
     
     /// <summary>

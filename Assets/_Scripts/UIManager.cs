@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using Unity.VisualScripting;
 
 /// <summary>
 /// Manages all UI elements for the interrogation scene.
@@ -9,6 +10,8 @@ using System.Collections;
 /// </summary>
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
+
     [Header("Dialogue UI")]
     [SerializeField] private TextMeshProUGUI detectiveDialogueText;
     [SerializeField] private TextMeshProUGUI innerMonologueText;
@@ -21,6 +24,7 @@ public class UIManager : MonoBehaviour
     [Header("Mask Buttons")]
     [SerializeField] private Transform maskButtonContainer;
     [SerializeField] private MaskButton[] maskButtons;
+    private MaskButton currentMaskButton;
     
     [Header("Game Over UI")]
     [SerializeField] private GameObject gameOverPanel;
@@ -33,7 +37,17 @@ public class UIManager : MonoBehaviour
     
     private Coroutine typewriterCoroutine;
     private float targetSuspicionFill;
-    
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
+
     private void Start()
     {
         // Subscribe to GameManager events
@@ -181,6 +195,30 @@ public class UIManager : MonoBehaviour
                     suspicionFill.color = suspicionGradient.Evaluate(normalizedValue);
                 }
             }
+        }
+    }
+
+    public void UpdateButtonOutline(MaskButton selectedButton)
+    {
+        if (!currentMaskButton)
+        {
+            currentMaskButton = selectedButton;
+            selectedButton.outline.enabled = true;
+            return;
+        }
+
+        if(currentMaskButton == selectedButton)
+        {
+            Debug.Log($"[MaskButton] Selected: {selectedButton.cardData.maskName}");
+            GameManager.Instance.SelectMask(selectedButton.cardData);
+            selectedButton.outline.enabled = false;
+            currentMaskButton = null;
+        }
+        else if(currentMaskButton != selectedButton)
+        {
+            currentMaskButton.outline.enabled = false;
+            selectedButton.outline.enabled = true;
+            currentMaskButton = selectedButton;
         }
     }
     
