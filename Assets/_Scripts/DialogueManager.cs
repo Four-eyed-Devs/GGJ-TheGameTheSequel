@@ -187,6 +187,12 @@ namespace Interrogation.Dialogue
             {
                 yield return null;
             }
+            
+            // Wait for the mask selection processing to complete (player response + investigator reaction)
+            while (isProcessing)
+            {
+                yield return null;
+            }
         }
 
         /// <summary>
@@ -208,6 +214,7 @@ namespace Interrogation.Dialogue
         /// </summary>
         private IEnumerator ProcessMaskSelection(MaskType selectedMask)
         {
+            isProcessing = true;
             waitingForMaskSelection = false;
             OnMaskSelectionDisabled?.Invoke();
 
@@ -216,6 +223,7 @@ namespace Interrogation.Dialogue
             if (selectedAnswer == null)
             {
                 Debug.LogError($"[DialogueManager] No answer found for mask: {selectedMask}");
+                isProcessing = false;
                 yield break;
             }
 
@@ -247,6 +255,8 @@ namespace Interrogation.Dialogue
                 yield return PlayInvestigatorLine(reaction);
                 yield return new WaitForSeconds(delayBetweenLines);
             }
+            
+            isProcessing = false;
         }
 
         /// <summary>
@@ -319,8 +329,6 @@ namespace Interrogation.Dialogue
         {
             if (line == null) yield break;
 
-            isProcessing = true;
-
             // Start voice playback
             VoiceManager.Instance?.PlayInvestigatorLine(line);
 
@@ -344,8 +352,6 @@ namespace Interrogation.Dialogue
                 // No voice, wait based on text length
                 yield return new WaitForSeconds(duration);
             }
-
-            isProcessing = false;
         }
 
         /// <summary>
@@ -354,8 +360,6 @@ namespace Interrogation.Dialogue
         private IEnumerator PlayPlayerLine(string text)
         {
             if (string.IsNullOrEmpty(text)) yield break;
-
-            isProcessing = true;
 
             // Estimate duration based on word count
             int wordCount = text.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length;
@@ -369,8 +373,6 @@ namespace Interrogation.Dialogue
                 yield return SubtitleUI.Instance.WaitForTypewriter();
                 yield return new WaitForSeconds(1f); // Brief pause after player speaks
             }
-
-            isProcessing = false;
         }
 
         /// <summary>

@@ -92,7 +92,7 @@ public class MaskCard3D : MonoBehaviour
     
     private System.Collections.IEnumerator DelayedInitialize()
     {
-        yield return null; // Wait one frame for GameManager
+        yield return null; // Wait one frame for managers to initialize
         
         if (cardData != null)
         {
@@ -109,17 +109,37 @@ public class MaskCard3D : MonoBehaviour
                 dialogueMaskType = Interrogation.Dialogue.MaskType.Charm;
         }
         
-        SubscribeToEvents();
+        // Subscribe to new DialogueManager first (preferred system)
         SubscribeToDialogueEvents();
         
-        if (GameManager.Instance != null)
+        // Only subscribe to old GameManager if DialogueManager is not present
+        SubscribeToEvents();
+        
+        // Initialize interactable state based on which system is active
+        if (DialogueManager.Instance != null)
         {
+            // New system: cards start non-interactable, enabled when mask selection is requested
+            isInteractable = false;
+            isDepleted = false;
+            usesRemaining = 2;
+            Debug.Log($"[MaskCard3D] {cardData?.maskName} initialized for new DialogueManager system");
+        }
+        else if (GameManager.Instance != null)
+        {
+            // Old system: use GameManager state
             HandleGameStateChanged(GameManager.Instance.CurrentState);
         }
     }
     
     private void SubscribeToEvents()
     {
+        // Skip old GameManager subscription if new DialogueManager is active
+        if (DialogueManager.Instance != null)
+        {
+            Debug.Log($"[MaskCard3D] {(cardData != null ? cardData.maskName : name)} using new DialogueManager - skipping old GameManager subscription");
+            return;
+        }
+        
         if (isSubscribed || GameManager.Instance == null) return;
         
         GameManager.Instance.OnMaskDurabilityChanged += HandleDurabilityChanged;
@@ -290,7 +310,20 @@ public class MaskCard3D : MonoBehaviour
     
     public void OnHoverEnter()
     {
-        if (!isInteractable || currentDurability <= 0 || isSelected) return;
+        // Check if card can be interacted with
+        bool canInteract = isInteractable && !isSelected;
+        
+        // For new dialogue system, check isDepleted; for old system, check currentDurability
+        if (DialogueManager.Instance != null)
+        {
+            canInteract = canInteract && !isDepleted;
+        }
+        else
+        {
+            canInteract = canInteract && currentDurability > 0;
+        }
+        
+        if (!canInteract) return;
         
         isHovered = true;
         targetPosition = originalPosition + Vector3.up * hoverLiftHeight;
@@ -309,7 +342,10 @@ public class MaskCard3D : MonoBehaviour
             targetRotation = originalRotation;
         }
 
-        if (isInteractable && currentDurability > 0 && !isSelected)
+        // Check appropriate durability based on which system is active
+        bool hasUsesLeft = DialogueManager.Instance != null ? !isDepleted : currentDurability > 0;
+        
+        if (isInteractable && hasUsesLeft && !isSelected)
         {
             SetCardColor(normalColor);
         }
@@ -319,7 +355,10 @@ public class MaskCard3D : MonoBehaviour
     
     public void OnCardClicked()
     {
-        if (!isInteractable || currentDurability <= 0)
+        // Check appropriate durability based on which system is active
+        bool hasUsesLeft = DialogueManager.Instance != null ? !isDepleted : currentDurability > 0;
+        
+        if (!isInteractable || !hasUsesLeft)
             return;
 
         isSelected = true;
