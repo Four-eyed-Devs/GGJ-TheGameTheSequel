@@ -157,6 +157,11 @@ public class CardInputHandler : MonoBehaviour
                 // Debug raycast to see what we're hitting
                 Vector2 mousePosition = mouse.position.ReadValue();
                 Ray ray = mainCamera.ScreenPointToRay(mousePosition);
+                if (currentMaskCard)
+                {
+                    currentMaskCard.DeselectCard();
+                    currentMaskCard = null;
+                }
                 if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, cardLayerMask))
                 {
                     Debug.Log($"[CardInputHandler] Hit object: {hit.collider.gameObject.name}, but no MaskCard3D component");

@@ -40,6 +40,9 @@ public class MaskCard3D : MonoBehaviour
     [SerializeField] private Color emotionAccent = new Color(0.8f, 0.4f, 0.6f);
     [SerializeField] private Color aggressionAccent = new Color(0.8f, 0.3f, 0.3f);
     [SerializeField] private Color charmAccent = new Color(0.8f, 0.7f, 0.3f);
+
+    [Header("Particle Effect")]
+    [SerializeField] private GameObject particleEffect;
     
     // Runtime state
     private int currentDurability;
@@ -272,6 +275,8 @@ public class MaskCard3D : MonoBehaviour
         targetPosition = originalPosition + Vector3.up * clickLift;
 
         targetRotation = originalRotation * Quaternion.Euler(clickRotation, 0f, 0f);
+
+        particleEffect.SetActive(true);
     }
 
     /// <summary>
@@ -321,6 +326,8 @@ public class MaskCard3D : MonoBehaviour
 
         targetPosition = originalPosition;
         targetRotation = originalRotation;
+
+        particleEffect.SetActive(false);
 
         if (isInteractable && currentDurability > 0)
         {
