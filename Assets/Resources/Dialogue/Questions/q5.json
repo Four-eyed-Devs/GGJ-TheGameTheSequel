@@ -13,14 +13,14 @@
                 "playerLine": "We were coordinating on a time-sensitive project. I can show you the emails that prompted those calls.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "At midnight? What project runs that late?", "voiceClipPath": "Voice/Investigator/q5_logic_low_01" },
-                        { "text": "Show me these emails. We'll verify them.", "voiceClipPath": "Voice/Investigator/q5_logic_low_02" },
-                        { "text": "Convenient documentation. Almost too convenient.", "voiceClipPath": "Voice/Investigator/q5_logic_low_03" }
+                        { "text": "Finally, the statue speaks. But I’m going to need a lot more.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicLowTension/Stoic Good Low T1.mp3" },
+                        { "text": "That actually aligns. I didn't think you had it in you.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicLowTension/Stoic Good Low T2.mp3" },
+                        { "text": "Will make do for now.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicLowTension/Stoic Good Low T3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "That would be helpful. Please forward those.", "voiceClipPath": "Voice/Investigator/q5_logic_high_01" },
-                        { "text": "Work calls make sense. We'll confirm.", "voiceClipPath": "Voice/Investigator/q5_logic_high_02" },
-                        { "text": "Good. Documentation always helps clear things up.", "voiceClipPath": "Voice/Investigator/q5_logic_high_03" }
+                        { "text": "There it is! Strangle hard enough, something real pops out.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicHighTension/Stoic Good High T1.mp3" },
+                        { "text": "Finally! It’s coming out now, piece by piece.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicHighTension/Stoic Good High  T2.mp3" },
+                        { "text": "Look at you! Finally human!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicHighTension/Stoic Good High T3.mp3" }
                     ]
                 }
             },
@@ -30,14 +30,14 @@
                 "playerLine": "I was worried about them! They'd been acting strange lately. I just wanted to check in...",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Strange how? Were they afraid of someone?", "voiceClipPath": "Voice/Investigator/q5_emotion_low_01" },
-                        { "text": "Multiple calls from a worried friend... or a stalker?", "voiceClipPath": "Voice/Investigator/q5_emotion_low_02" },
-                        { "text": "Worried enough to call six times in an hour?", "voiceClipPath": "Voice/Investigator/q5_emotion_low_03" }
+                        { "text": "The tears don't change the facts.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimLowTension/The Victim Low Tension 1.mp3" },
+                        { "text": "No more crying. No more hiding. No more light.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimLowTension/The Victim Low Tension 2.mp3" },
+                        { "text": "Innocence is a fragile thing. Once it’s broken, no amount of weeping can mend it.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimLowTension/The Victim Low Tension 3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "That's concerning. What seemed strange to you?", "voiceClipPath": "Voice/Investigator/q5_emotion_high_01" },
-                        { "text": "A caring friend. Did they answer any calls?", "voiceClipPath": "Voice/Investigator/q5_emotion_high_02" },
-                        { "text": "Your concern seems genuine. What were they worried about?", "voiceClipPath": "Voice/Investigator/q5_emotion_high_03" }
+                        { "text": "Stop the sniveling! It won't save you now!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimHighTension/The Victim High Tension 1.mp3" },
+                        { "text": "Your tears are useless here. They won’t wash away what’s on your hands.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimHighTension/The Victim High Tension 2.mp3" },
+                        { "text": "I don't care if you're scared. I care about the truth!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimHighTension/The Victim High Tension 3.mp3" }
                     ]
                 }
             },
@@ -47,14 +47,14 @@
                 "playerLine": "So what? I call people! It's not a crime to use a phone!",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Six calls in one hour before they died? That's not normal.", "voiceClipPath": "Voice/Investigator/q5_aggression_low_01" },
-                        { "text": "Your hostility is telling me a lot.", "voiceClipPath": "Voice/Investigator/q5_aggression_low_02" },
-                        { "text": "Evading the question only makes you look guilty.", "voiceClipPath": "Voice/Investigator/q5_aggression_low_03" }
+                        { "text": "All that noise won’t change anything. You’re just wasting oxygen that you’re going to need later.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadLowTension/The Hothead Low Tension 1.mp3" },
+                        { "text": "A loud mouth. A closed mind. A locked cell.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadLowTension/The Hothead Low Tension 2.mp3" },
+                        { "text": "Anger is just a mask for fear. I'm looking forward to seeing what's hiding underneath.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadLowTension/The Hothead Low Tension 3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "You're right, but I need to understand the context.", "voiceClipPath": "Voice/Investigator/q5_aggression_high_01" },
-                        { "text": "No one's accusing you. Just explain the calls.", "voiceClipPath": "Voice/Investigator/q5_aggression_high_02" },
-                        { "text": "Relax. I'm just following up on the records.", "voiceClipPath": "Voice/Investigator/q5_aggression_high_03" }
+                        { "text": "Keep screaming and I’ll make sure only four walls and a steel door will hear you from now on!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadHighTension/The Hothead High Tension 1.mp3" },
+                        { "text": "Finally, real passion. Everything comes out when people lose control.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadHighTension/The Hothead High Tension 2.mp3" },
+                        { "text": "You were so focused on yelling you forgot to keep the pieces together.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadHighTension/The Hothead High Tension 3.mp3" }
                     ]
                 }
             },
@@ -64,14 +64,14 @@
                 "playerLine": "We talked all the time, Detective. Best friends do that. I'm sure your records show plenty of friendly chats.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Best friends? Earlier you said business associates.", "voiceClipPath": "Voice/Investigator/q5_charm_low_01" },
-                        { "text": "Your story keeps changing. Which is it?", "voiceClipPath": "Voice/Investigator/q5_charm_low_02" },
-                        { "text": "Friendly chats don't usually end in unanswered calls.", "voiceClipPath": "Voice/Investigator/q5_charm_low_03" }
+                        { "text": "That’s an intricate story, but even the tightest knots eventually unravel!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverLowTension/The Deceiver Low Tension 1.mp3" },
+                        { "text": "You weave beautiful webs. But even the spider eventually gets tangled.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverLowTension/The Deceiver Low Tension 2.mp3" },
+                        { "text": "You weave. You spin. You choke.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverLowTension/The Deceiver Low Tension 3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "Close friends, I see. What did you discuss?", "voiceClipPath": "Voice/Investigator/q5_charm_high_01" },
-                        { "text": "Regular communication. That's understandable.", "voiceClipPath": "Voice/Investigator/q5_charm_high_02" },
-                        { "text": "Did they pick up? What was the conversation about?", "voiceClipPath": "Voice/Investigator/q5_charm_high_03" }
+                        { "text": "Stop spinning webs! The truth is staring at you and you’re still trying to paint over it!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverHighTension/The Deceiver High Tension 1.mp3" },
+                        { "text": "Every word is rot. Every breath is poison. Every second is a lie.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverHighTension/The Deceiver High Tension 2.mp3" },
+                        { "text": "You think you're smart? You're in that chair for a reason, and it’s not because you’re a genius.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverHighTension/The Deceiver High Tension 3.mp3" }
                     ]
                 }
             }
