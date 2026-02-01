@@ -44,6 +44,7 @@ namespace Interrogation.Dialogue
                 return;
             }
             Instance = this;
+            DontDestroyOnLoad(gameObject);
             
             ResetTension();
         }
