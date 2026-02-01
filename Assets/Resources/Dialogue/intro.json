@@ -1,16 +1,16 @@
 {
     "introVariants": [
         {
-            "text": "Please, have a seat. I just have a few questions for you.",
-            "voiceClipPath": "Voice/Investigator/intro_01"
+            "text": "That chair has heard countless lies. Don’t make yours the next one.",
+            "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/Intro/Intro 1"
         },
         {
-            "text": "Thank you for coming in. This shouldn't take long... if you cooperate.",
-            "voiceClipPath": "Voice/Investigator/intro_02"
+            "text": "The door is locked. The clock is running. Start talking before I stop listening.",
+            "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/Intro/Intro 2"
         },
         {
-            "text": "I've been looking forward to this conversation. Let's get started, shall we?",
-            "voiceClipPath": "Voice/Investigator/intro_03"
+            "text": "This room only has one exit. Whether you walk out or get carried out is up to you.",
+            "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/Intro/Intro 3"
         }
     ]
 }

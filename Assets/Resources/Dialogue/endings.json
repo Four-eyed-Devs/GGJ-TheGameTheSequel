@@ -3,12 +3,12 @@
         "endingType": "good",
         "lines": [
             {
-                "text": "Well... I have to admit, your story checks out.",
-                "voiceClipPath": "Voice/Investigator/ending_good_01"
+                "text": "Your story holds together. Barely.",
+                "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/PositiveOutcomes/Positive Outcome 2"
             },
             {
                 "text": "You're free to go. For now.",
-                "voiceClipPath": "Voice/Investigator/ending_good_02"
+                "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/PositiveOutcomes/Positive Outcome 1"
             }
         ]
     },
@@ -16,12 +16,12 @@
         "endingType": "bad",
         "lines": [
             {
-                "text": "Your story doesn't add up. I think we both know what happened here.",
-                "voiceClipPath": "Voice/Investigator/ending_bad_01"
+                "text": "You had your chance. We’re done here.",
+                "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/NegativeOutcomes/Negative Outcome 1"
             },
             {
-                "text": "I'm placing you under arrest. You have the right to remain silent...",
-                "voiceClipPath": "Voice/Investigator/ending_bad_02"
+                "text": "You chose the dark. Now you have to live in it.",
+                "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/NegativeOutcomes/Negative Outcome 2"
             }
         ]
     }
