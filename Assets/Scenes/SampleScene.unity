@@ -2415,6 +2415,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 942752687}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 942752688}
     - targetCorrespondingSourceObject: {fileID: -7395704305543789238, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1543268362}
@@ -2446,6 +2449,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &942752688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942752685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab1781c7899c694a98e4d7b47cc6810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlackManAnimator
+  animator: {fileID: 0}
+  relaxedThreshold: 50
+  overTableThreshold: 80
+  minActionInterval: 5
+  maxActionInterval: 15
+  tableActionChance: 0.3
+  enableRandomActions: 1
 --- !u!1 &968295464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9210487461902537947, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
