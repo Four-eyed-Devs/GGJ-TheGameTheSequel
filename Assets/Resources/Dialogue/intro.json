@@ -2,15 +2,15 @@
     "introVariants": [
         {
             "text": "That chair has heard countless lies. Don’t make yours the next one.",
-            "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/Intro/Intro 1"
+            "voiceClipPath": "Audio_Voice_Lines/Intro/Intro 1"
         },
         {
             "text": "The door is locked. The clock is running. Start talking before I stop listening.",
-            "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/Intro/Intro 2"
+            "voiceClipPath": "Audio_Voice_Lines/Intro/Intro 2"
         },
         {
             "text": "This room only has one exit. Whether you walk out or get carried out is up to you.",
-            "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/Intro/Intro 3"
+            "voiceClipPath": "Audio_Voice_Lines/Intro/Intro 3"
         }
     ]
 }

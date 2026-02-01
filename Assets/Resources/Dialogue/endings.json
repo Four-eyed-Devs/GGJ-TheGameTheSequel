@@ -4,11 +4,11 @@
         "lines": [
             {
                 "text": "Your story holds together. Barely.",
-                "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/PositiveOutcomes/Positive Outcome 2"
+                "voiceClipPath": "Audio_Voice_Lines/PositiveOutcomes/Positive Outcome 2"
             },
             {
                 "text": "You're free to go. For now.",
-                "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/PositiveOutcomes/Positive Outcome 1"
+                "voiceClipPath": "Audio_Voice_Lines/PositiveOutcomes/Positive Outcome 1"
             }
         ]
     },
@@ -17,11 +17,11 @@
         "lines": [
             {
                 "text": "You had your chance. We’re done here.",
-                "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/NegativeOutcomes/Negative Outcome 1"
+                "voiceClipPath": "Audio_Voice_Lines/NegativeOutcomes/Negative Outcome 1"
             },
             {
                 "text": "You chose the dark. Now you have to live in it.",
-                "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/NegativeOutcomes/Negative Outcome 2"
+                "voiceClipPath": "Audio_Voice_Lines/NegativeOutcomes/Negative Outcome 2"
             }
         ]
     }

@@ -48,9 +48,8 @@ public class InterrogatorAnimator : MonoBehaviour
         
         // Cache parameter hashes
         stressedHash = Animator.StringToHash(stressedParam);
-        veryStressedTreshold = Animator.StringToHash(veryStressedParam);
         tableSlamHash = Animator.StringToHash(tableSlamTrigger);
-        tableHumpHash = Animator.StringToHash(tableHumpTrigger)
+        tableHumpHash = Animator.StringToHash(tableHumpTrigger);
     }
     
     private void Start()
@@ -104,7 +103,7 @@ public class InterrogatorAnimator : MonoBehaviour
             {
                 PlayTableHump();
             }
-            else if(Random.Value < tableSlamChance)
+            else if(Random.value < tableSlamChance)
             {
                 PlayTableSlam();
             }
