@@ -370,7 +370,7 @@ namespace Interrogation.Dialogue
             float duration = Mathf.Max(2f, wordCount * 0.3f);
 
             SubtitleUI.Instance?.ShowPlayerLine(text, duration);
-
+    
             // Wait for typewriter
             if (SubtitleUI.Instance != null)
             {

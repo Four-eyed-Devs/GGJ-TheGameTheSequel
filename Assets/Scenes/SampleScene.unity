@@ -1517,9 +1517,17 @@ PrefabInstance:
       value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 4964872066697493959, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 1189058787}
+    - target: {fileID: 4964872066697493959, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: maskVFXSound
       value: 
       objectReference: {fileID: 8300000, guid: af33e4d84072d4a7d8f0a153e2991b90, type: 3}
+    - target: {fileID: 4964872066697493959, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: durabilityText
+      value: 
+      objectReference: {fileID: 663669791}
     - target: {fileID: 5497491963234500364, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_Type
       value: 0
@@ -1781,8 +1789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskCard3D
   cardData: {fileID: 11400000, guid: fd06474b70c8bb640943f08aa045a6cf, type: 2}
   dialogueMaskType: 0
-  nameText: {fileID: 1932533057}
-  durabilityText: {fileID: 1495340251}
+  nameText: {fileID: 1937800876}
+  durabilityText: {fileID: 2142698323}
   cardRenderer: {fileID: 751999642}
   normalColor: {r: 0.2, g: 0.2, b: 0.25, a: 1}
   hoverColor: {r: 0.29803923, g: 0.3706373, b: 0.4, a: 1}
@@ -3141,7 +3149,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344691201}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -3529,17 +3537,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494796894}
   m_CullTransparentMesh: 1
---- !u!114 &1495340251 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1234823062475010038, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
-  m_PrefabInstance: {fileID: 637669335}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
 --- !u!1 &1596658748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4015,6 +4012,13 @@ MonoBehaviour:
   autoHideDelay: 2
   investigatorColor: {r: 0.8, g: 0.2, b: 0.2, a: 1}
   playerColor: {r: 0.2, g: 0.6, b: 0.8, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 0.95}
+  createUIAtRuntime: 1
+  maxTextWidth: 600
+  padding: 30
+  topMargin: 60
+  leftMargin: 50
+  showSpeakerLine: 1
 --- !u!225 &1747244444
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4034,7 +4038,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747244441}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4084,8 +4088,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskCard3D
   cardData: {fileID: 11400000, guid: 6a43d703bb55dbd498a2271e1de4f39c, type: 2}
   dialogueMaskType: 0
-  nameText: {fileID: 282960651}
-  durabilityText: {fileID: 721364528}
+  nameText: {fileID: 1315556499}
+  durabilityText: {fileID: 178475156}
   cardRenderer: {fileID: 751999642}
   normalColor: {r: 0.2, g: 0.2, b: 0.25, a: 1}
   hoverColor: {r: 0.3, g: 0.3, b: 0.4, a: 1}
@@ -4387,9 +4391,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 379785de5e39005469c875710d3cc5a7, type: 3}
---- !u!114 &1932533057 stripped
+--- !u!114 &1937800876 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4495826316525759599, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8359215653317132242, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
   m_PrefabInstance: {fileID: 637669335}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -4888,6 +4892,17 @@ Transform:
   - {fileID: 178475155}
   m_Father: {fileID: 1753790054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2142698323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8026650947007553664, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+  m_PrefabInstance: {fileID: 637669335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
 --- !u!4 &960989237006936024
 Transform:
   m_ObjectHideFlags: 0
