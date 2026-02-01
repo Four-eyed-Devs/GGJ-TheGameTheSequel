@@ -13,14 +13,14 @@
                 "playerLine": "It was a minor disagreement about project deadlines. I can provide documentation of our professional correspondence.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Your silence is a choice, but it’s a heavy one to carry.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicLowTension/The Stoic Low Tension 1.mp3" },
-                        { "text": "Every second you spend not talking is a second the world decides your guilt for you.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicLowTension/The Stoic Low Tension 2.mp3" },
-                        { "text": "You think staring makes you look innocent, but it only delays the inevitable.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicLowTension/The Stoic Low Tension 3.mp3" }
+                        { "text": "Your silence is a choice, but it's a heavy one to carry.", "voiceClipPath": "Audio_Voice_Lines/StoicLowTension/The Stoic Low Tension 1" },
+                        { "text": "Every second you spend not talking is a second the world decides your guilt for you.", "voiceClipPath": "Audio_Voice_Lines/StoicLowTension/The Stoic Low Tension 2" },
+                        { "text": "You think staring makes you look innocent, but it only delays the inevitable.", "voiceClipPath": "Audio_Voice_Lines/StoicLowTension/The Stoic Low Tension 3" }
                     ],
                     "highTension": [
-                        { "text": "Say something, damn it! You think this quiet act makes you untouchable?", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicHighTension/The Stoic High Tension 1.mp3" },
-                        { "text": "You think your mask protects you?", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicHighTension/The Stoic High Tension 2.mp3" },
-                        { "text": "I will tear that calm right off your face if I have to!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicHighTension/The Stoic High Tension 3.mp3" }
+                        { "text": "Say something, damn it! You think this quiet act makes you untouchable?", "voiceClipPath": "Audio_Voice_Lines/StoicHighTension/The Stoic High Tension 1" },
+                        { "text": "You think your mask protects you?", "voiceClipPath": "Audio_Voice_Lines/StoicHighTension/The Stoic High Tension 2" },
+                        { "text": "I will tear that calm right off your face if I have to!", "voiceClipPath": "Audio_Voice_Lines/StoicHighTension/The Stoic High Tension 3" }
                     ]
                 }
             },
@@ -30,14 +30,14 @@
                 "playerLine": "We had a misunderstanding. I said things I didn't mean. I wish I could take it back now...",
                 "reactions": {
                     "lowTension": [
-                        { "text": "The tears don't change the facts.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 1.mp3" },
-                        { "text": "No more crying. No more hiding. No more light.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 2.mp3" },
-                        { "text": "Innocence is a fragile thing. Once it’s broken, no amount of weeping can mend it.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 3.mp3" }
+                        { "text": "The tears don't change the facts.", "voiceClipPath": "Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 1" },
+                        { "text": "No more crying. No more hiding. No more light.", "voiceClipPath": "Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 2" },
+                        { "text": "Innocence is a fragile thing. Once it's broken, no amount of weeping can mend it.", "voiceClipPath": "Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 3" }
                     ],
                     "highTension": [
-                        { "text": "Stop the sniveling! It won't save you now!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimHighTension/The Victim High Tension 1.mp3"  },
-                        { "text": "Your tears are useless here. They won’t wash away what’s on your hands.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimHighTension/The Victim High Tension 1.mp3" },
-                        { "text": "I don't care if you're scared. I care about the truth!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimHighTension/The Victim High Tension 3.mp3" }
+                        { "text": "Stop the sniveling! It won't save you now!", "voiceClipPath": "Audio_Voice_Lines/VictimHighTension/The Victim High Tension 1" },
+                        { "text": "Your tears are useless here. They won't wash away what's on your hands.", "voiceClipPath": "Audio_Voice_Lines/VictimHighTension/The Victim High Tension 2" },
+                        { "text": "I don't care if you're scared. I care about the truth!", "voiceClipPath": "Audio_Voice_Lines/VictimHighTension/The Victim High Tension 3" }
                     ]
                 }
             },
@@ -47,14 +47,14 @@
                 "playerLine": "People argue! It doesn't mean I killed anyone! This is ridiculous!",
                 "reactions": {
                     "lowTension": [
-                        { "text": "All that noise won’t change anything. You’re just wasting oxygen that you’re going to need later.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 1.mp3" },
-                        { "text": "A loud mouth. A closed mind. A locked cell.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 2.mp3" },
-                        { "text": "Anger is just a mask for fear. I'm looking forward to seeing what's hiding underneath.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 3.mp3" }
+                        { "text": "All that noise won't change anything. You're just wasting oxygen that you're going to need later.", "voiceClipPath": "Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 1" },
+                        { "text": "A loud mouth. A closed mind. A locked cell.", "voiceClipPath": "Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 2" },
+                        { "text": "Anger is just a mask for fear. I'm looking forward to seeing what's hiding underneath.", "voiceClipPath": "Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 3" }
                     ],
                     "highTension": [
-                        { "text": "Keep screaming and I’ll make sure only four walls and a steel door will hear you from now on!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 1.mp3" },
-                        { "text": "Finally, real passion. Everything comes out when people lose control.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 2.mp3" },
-                        { "text": "You were so focused on yelling you forgot to keep the pieces together.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 3.mp3" }
+                        { "text": "Keep screaming and I'll make sure only four walls and a steel door will hear you from now on!", "voiceClipPath": "Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 1" },
+                        { "text": "Finally, real passion. Everything comes out when people lose control.", "voiceClipPath": "Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 2" },
+                        { "text": "You were so focused on yelling you forgot to keep the pieces together.", "voiceClipPath": "Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 3" }
                     ]
                 }
             },
@@ -64,14 +64,14 @@
                 "playerLine": "You know how it is, Detective. Two passionate people, strong opinions. We always made up afterward. It was just our dynamic.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "That almost sounded real. For your sake, keep it that way.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverLowTension/Deceiver Good Low T1.mp3" },
-                        { "text": "Finally, a lead that isn't a dead end. Don't get comfortable.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverLowTension/Deceiver Good Low T2.mp3" },
-                        { "text": "Interesting...continue.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverLowTension/Deceiver Good Low T3.mp3" }
+                        { "text": "That almost sounded real. For your sake, keep it that way.", "voiceClipPath": "Audio_Voice_Lines/DeceiverLowTension/Deceiver Good Low T1" },
+                        { "text": "Finally, a lead that isn't a dead end. Don't get comfortable.", "voiceClipPath": "Audio_Voice_Lines/DeceiverLowTension/Deceiver Good Low T2" },
+                        { "text": "Interesting...continue.", "voiceClipPath": "Audio_Voice_Lines/DeceiverLowTension/Deceiver Good Low T3" }
                     ],
                     "highTension": [
-                        { "text": "Stop this dance! You’re finally talking sense.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverHighTension/Deceiver Good High T1.mp3" },
-                        { "text": "Better hope it's true, you might just save your skin!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverHighTension/Deceiver Good High T2.mp3" },
-                        { "text": "Don't get comfortable, masks aren't permanent.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverHighTension/Deceiver Good High T3.mp3" }
+                        { "text": "Stop this dance! You're finally talking sense.", "voiceClipPath": "Audio_Voice_Lines/DeceiverHighTension/Deceiver Good High T1" },
+                        { "text": "Better hope it's true, you might just save your skin!", "voiceClipPath": "Audio_Voice_Lines/DeceiverHighTension/Deceiver Good High T2" },
+                        { "text": "Don't get comfortable, masks aren't permanent.", "voiceClipPath": "Audio_Voice_Lines/DeceiverHighTension/Deceiver Good High T3" }
                     ]
                 }
             }

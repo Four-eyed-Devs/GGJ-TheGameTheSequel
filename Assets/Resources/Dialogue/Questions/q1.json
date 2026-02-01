@@ -13,14 +13,14 @@
                 "playerLine": "I was at home, working late. I have timestamps on my computer files that can verify this.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Finally, the statue speaks. But I’m going to need a lot more.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicLowTension/Stoic Good Low T1.mp3" },
-                        { "text": "That actually aligns. I didn't think you had it in you.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicLowTension/Stoic Good Low T2.mp3" },
-                        { "text": "Will make do for now.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicLowTension/Stoic Good Low T3.mp3" }
+                        { "text": "Finally, the statue speaks. But I'm going to need a lot more.", "voiceClipPath": "Audio_Voice_Lines/StoicLowTension/Stoic Good Low T1" },
+                        { "text": "That actually aligns. I didn't think you had it in you.", "voiceClipPath": "Audio_Voice_Lines/StoicLowTension/Stoic Good Low T2" },
+                        { "text": "Will make do for now.", "voiceClipPath": "Audio_Voice_Lines/StoicLowTension/Stoic Good Low T3" }
                     ],
                     "highTension": [
-                        { "text": "There it is! Strangle hard enough, something real pops out.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicHighTension/Stoic Good High T1.mp3" },
-                        { "text": "Finally! It’s coming out now, piece by piece.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicHighTension/Stoic Good High  T2.mp3" },
-                        { "text": "Look at you! Finally human!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/StoicHighTension/Stoic Good High T3.mp3" }
+                        { "text": "There it is! Strangle hard enough, something real pops out.", "voiceClipPath": "Audio_Voice_Lines/StoicHighTension/Stoic Good High T1" },
+                        { "text": "Finally! It's coming out now, piece by piece.", "voiceClipPath": "Audio_Voice_Lines/StoicHighTension/Stoic Good High  T2" },
+                        { "text": "Look at you! Finally human!", "voiceClipPath": "Audio_Voice_Lines/StoicHighTension/Stoic Good High T3" }
                     ]
                 }
             },
@@ -30,14 +30,14 @@
                 "playerLine": "I... I was alone. It's been so hard since everything happened. I just needed time to think.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "The tears don't change the facts.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 1.mp3" },
-                        { "text": "No more crying. No more hiding. No more light.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 2.mp3" },
-                        { "text": "Innocence is a fragile thing. Once it’s broken, no amount of weeping can mend it.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 3.mp3" }
+                        { "text": "The tears don't change the facts.", "voiceClipPath": "Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 1" },
+                        { "text": "No more crying. No more hiding. No more light.", "voiceClipPath": "Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 2" },
+                        { "text": "Innocence is a fragile thing. Once it's broken, no amount of weeping can mend it.", "voiceClipPath": "Audio_Voice_Lines/VictimLowTension/The Victim Low Tension 3" }
                     ],
                     "highTension": [
-                        { "text": "Stop the sniveling! It won't save you now!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimHighTension/The Victim High Tension 1.mp3" },
-                        { "text": "Your tears are useless here. They won’t wash away what’s on your hands.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimHighTension/The Victim High Tension 2.mp3" },
-                        { "text": "I don't care if you're scared. I care about the truth!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/VictimHighTension/The Victim High Tension 3.mp3" }
+                        { "text": "Stop the sniveling! It won't save you now!", "voiceClipPath": "Audio_Voice_Lines/VictimHighTension/The Victim High Tension 1" },
+                        { "text": "Your tears are useless here. They won't wash away what's on your hands.", "voiceClipPath": "Audio_Voice_Lines/VictimHighTension/The Victim High Tension 2" },
+                        { "text": "I don't care if you're scared. I care about the truth!", "voiceClipPath": "Audio_Voice_Lines/VictimHighTension/The Victim High Tension 3" }
                     ]
                 }
             },
@@ -47,14 +47,14 @@
                 "playerLine": "Why does it matter? You've already made up your mind about me!",
                 "reactions": {
                     "lowTension": [
-                        { "text": "All that noise won’t change anything. You’re just wasting oxygen that you’re going to need later.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 1.mp3" },
-                        { "text": "A loud mouth. A closed mind. A locked cell.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 2.mp3" },
-                        { "text": "Anger is just a mask for fear. I'm looking forward to seeing what's hiding underneath.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 3.mp3" }
+                        { "text": "All that noise won't change anything. You're just wasting oxygen that you're going to need later.", "voiceClipPath": "Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 1" },
+                        { "text": "A loud mouth. A closed mind. A locked cell.", "voiceClipPath": "Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 2" },
+                        { "text": "Anger is just a mask for fear. I'm looking forward to seeing what's hiding underneath.", "voiceClipPath": "Audio_Voice_Lines/HotheadLowTension/The Hothead Low Tension 3" }
                     ],
                     "highTension": [
-                        { "text": "Keep screaming and I’ll make sure only four walls and a steel door will hear you from now on!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 1.mp3" },
-                        { "text": "Finally, real passion. Everything comes out when people lose control.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 2.mp3" },
-                        { "text": "You were so focused on yelling you forgot to keep the pieces together.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 3.mp3" }
+                        { "text": "Keep screaming and I'll make sure only four walls and a steel door will hear you from now on!", "voiceClipPath": "Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 1" },
+                        { "text": "Finally, real passion. Everything comes out when people lose control.", "voiceClipPath": "Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 2" },
+                        { "text": "You were so focused on yelling you forgot to keep the pieces together.", "voiceClipPath": "Audio_Voice_Lines/HotheadHighTension/The Hothead High Tension 3" }
                     ]
                 }
             },
@@ -64,14 +64,14 @@
                 "playerLine": "Detective, I'm sure someone of your experience can tell I'm being completely honest here.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "That’s an intricate story, but even the tightest knots eventually unravel!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverLowTension/The Deceiver Low Tension 1.mp3" },
-                        { "text": "You weave beautiful webs. But even the spider eventually gets tangled.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverLowTension/The Deceiver Low Tension 2.mp3" },
-                        { "text": "You weave. You spin. You choke.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverLowTension/The Deceiver Low Tension 3.mp3" }
+                        { "text": "That's an intricate story, but even the tightest knots eventually unravel!", "voiceClipPath": "Audio_Voice_Lines/DeceiverLowTension/The Deceiver Low Tension 1" },
+                        { "text": "You weave beautiful webs. But even the spider eventually gets tangled.", "voiceClipPath": "Audio_Voice_Lines/DeceiverLowTension/The Deceiver Low Tension 2" },
+                        { "text": "You weave. You spin. You choke.", "voiceClipPath": "Audio_Voice_Lines/DeceiverLowTension/The Deceiver Low Tension 3" }
                     ],
                     "highTension": [
-                        { "text": "Stop spinning webs! The truth is staring at you and you’re still trying to paint over it!", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverHighTension/The Deceiver High Tension 1.mp3" },
-                        { "text": "Every word is rot. Every breath is poison. Every second is a lie.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverHighTension/The Deceiver High Tension 2.mp3" },
-                        { "text": "You think you're smart? You're in that chair for a reason, and it’s not because you’re a genius.", "voiceClipPath": "Assets/Resources/Audio_Voice_Lines/DeceiverHighTension/The Deceiver High Tension 3.mp3" }
+                        { "text": "Stop spinning webs! The truth is staring at you and you're still trying to paint over it!", "voiceClipPath": "Audio_Voice_Lines/DeceiverHighTension/The Deceiver High Tension 1" },
+                        { "text": "Every word is rot. Every breath is poison. Every second is a lie.", "voiceClipPath": "Audio_Voice_Lines/DeceiverHighTension/The Deceiver High Tension 2" },
+                        { "text": "You think you're smart? You're in that chair for a reason, and it's not because you're a genius.", "voiceClipPath": "Audio_Voice_Lines/DeceiverHighTension/The Deceiver High Tension 3" }
                     ]
                 }
             }
