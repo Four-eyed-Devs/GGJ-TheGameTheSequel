@@ -65,6 +65,7 @@ public class MaskCard3D : MonoBehaviour
     private bool isSubscribed = false;
     private bool isDialogueSubscribed = false;
     private bool firstCLick = true;
+    private Animator anim;
     
     // Properties
     public Interrogation.Dialogue.MaskType DialogueMaskType => dialogueMaskType;
@@ -77,6 +78,8 @@ public class MaskCard3D : MonoBehaviour
         targetPosition = originalPosition;
         originalRotation = transform.localRotation;
         targetRotation = originalRotation;
+        anim = GetComponent<Animator>();
+        anim.SetBool("isIdle", true);
 
         // Get or create material instance
         if (cardRenderer != null)
@@ -401,6 +404,9 @@ public class MaskCard3D : MonoBehaviour
 
             CardInputHandler.Instance.UpdateCardPos(this);
 
+            anim.SetBool("isSelected", true);
+            anim.SetBool("isIdle", false);
+
             return;
         }
 
@@ -480,6 +486,9 @@ public class MaskCard3D : MonoBehaviour
         isSelected = false;
         isHovered = false;
         firstCLick = true; // Reset the double-click counter when deselected
+
+        anim.SetBool("isIdle", true);
+        anim.SetBool("isSelected", false);
 
         targetPosition = originalPosition;
         targetRotation = originalRotation;
