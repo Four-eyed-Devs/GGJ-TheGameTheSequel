@@ -1517,6 +1517,10 @@ PrefabInstance:
       value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 4964872066697493959, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: cardData
+      value: 
+      objectReference: {fileID: 11400000, guid: ef5852e18776b1147bc2e86668d24151, type: 2}
+    - target: {fileID: 4964872066697493959, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: nameText
       value: 
       objectReference: {fileID: 1189058787}
@@ -2031,25 +2035,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870063458}
   m_CullTransparentMesh: 1
---- !u!1 &893673149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7395704305543789238, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
-  m_PrefabInstance: {fileID: 1462472015}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &893673152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893673149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac856f2e2a2de804d95a81edef23fdaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManualBaseMapOffset
-  material: {fileID: 2100000, guid: df1f6115e3da89a4a88d6d7261e04edd, type: 2}
-  offset: {x: 0, y: 0}
 --- !u!1 &911402035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,6 +2389,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interogator-o-bama2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270385149481835050, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: df1f6115e3da89a4a88d6d7261e04edd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2411,29 +2404,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 942752687}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -7395704305543789238, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 942752686}
+      addedObject: {fileID: 1543268362}
   m_SourcePrefab: {fileID: 100100000, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
 --- !u!1 &942752685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
   m_PrefabInstance: {fileID: 942752684}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &942752686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942752685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac856f2e2a2de804d95a81edef23fdaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManualBaseMapOffset
-  material: {fileID: 2100000, guid: df1f6115e3da89a4a88d6d7261e04edd, type: 2}
-  offset: {x: 0, y: 0}
 --- !u!95 &942752687
 Animator:
   serializedVersion: 7
@@ -3392,6 +3371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interogator-o-bama
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4270385149481835050, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
@@ -3403,9 +3386,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       insertIndex: -1
       addedObject: {fileID: 399387010}
-    - targetCorrespondingSourceObject: {fileID: -7395704305543789238, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 893673152}
   m_SourcePrefab: {fileID: 100100000, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
 --- !u!1 &1494796894
 GameObject:
@@ -3543,6 +3523,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494796894}
   m_CullTransparentMesh: 1
+--- !u!1 &1543268359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7395704305543789238, guid: 75a34c02c00c93049980868b88355a6f, type: 3}
+  m_PrefabInstance: {fileID: 942752684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1543268362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543268359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac856f2e2a2de804d95a81edef23fdaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManualBaseMapOffset
+  material: {fileID: 2100000, guid: df1f6115e3da89a4a88d6d7261e04edd, type: 2}
+  offset: {x: 0, y: 0}
+  useTensionBasedOffset: 1
+  transitionSpeed: 8
+  neutralY: -0.16
+  at60Y: 0
+  at70Y: 0.16
+  at80Y: 0.32
+  at40Y: 0
+  at30Y: 0.48
+  at20Y: 0.63
 --- !u!1 &1596658748
 GameObject:
   m_ObjectHideFlags: 0
@@ -9519,5 +9527,5 @@ SceneRoots:
   - {fileID: 637669335}
   - {fileID: 911402039}
   - {fileID: 1462472015}
-  - {fileID: 1098006336}
   - {fileID: 942752684}
+  - {fileID: 1098006336}
