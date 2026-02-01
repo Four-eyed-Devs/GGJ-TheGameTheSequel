@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefa2b7be0d40654fa89483c4bac7477, type: 3}
   m_Name: TheVictim
   m_EditorClassIdentifier: 
-  maskName: The Victim
+  maskName: Victim
   description: Sympathy is a weapon. Let the tears flow. Show them you're just as broken as anyone else - maybe more so.
   maskType: 1
   maxDurability: 3

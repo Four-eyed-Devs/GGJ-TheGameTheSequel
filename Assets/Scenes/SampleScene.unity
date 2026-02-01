@@ -1360,6 +1360,10 @@ PrefabInstance:
       propertyPath: particleEffect
       value: 
       objectReference: {fileID: 565215320}
+    - target: {fileID: 2542025423794987683, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.543
+      objectReference: {fileID: 0}
     - target: {fileID: 2648564974112988292, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1390,7 +1394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3837506599105260062, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.491
+      value: -0.571
       objectReference: {fileID: 0}
     - target: {fileID: 3837506599105260062, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1482,7 +1486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894890462675378003, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.163
+      value: -0.207
       objectReference: {fileID: 0}
     - target: {fileID: 4894890462675378003, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1703,6 +1707,10 @@ PrefabInstance:
     - target: {fileID: 9212157275732723117, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.61285543
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214964451766817574, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.172
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3554,7 +3562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ManualBaseMapOffset
   material: {fileID: 2100000, guid: df1f6115e3da89a4a88d6d7261e04edd, type: 2}
-  offset: {x: 0, y: 0}
+  offset: {x: 0, y: -0.16}
   useTensionBasedOffset: 1
   transitionSpeed: 8
   neutralY: -0.16

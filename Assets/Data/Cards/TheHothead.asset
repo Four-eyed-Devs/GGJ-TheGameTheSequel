@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefa2b7be0d40654fa89483c4bac7477, type: 3}
   m_Name: TheHothead
   m_EditorClassIdentifier: 
-  maskName: The Hothead
+  maskName: Hothead
   description: Attack is the best defense. Slam the table. Raise your voice. Make them wonder if pushing you further is worth the risk.
   maskType: 2
   maxDurability: 3

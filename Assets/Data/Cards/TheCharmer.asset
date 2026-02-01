@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefa2b7be0d40654fa89483c4bac7477, type: 3}
   m_Name: TheCharmer
   m_EditorClassIdentifier: 
-  maskName: The Charmer
+  maskName: Charmer
   description: Everyone wants to be liked. Mirror their body language. Find common ground. Make them forget you're a suspect at all.
   maskType: 3
   maxDurability: 3

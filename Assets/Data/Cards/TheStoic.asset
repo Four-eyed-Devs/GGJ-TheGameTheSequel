@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefa2b7be0d40654fa89483c4bac7477, type: 3}
   m_Name: TheStoic
   m_EditorClassIdentifier: 
-  maskName: The Stoic
+  maskName: Stoic
   description: Cold logic. Analytical detachment. You process their words like data, stripping away emotion to find the flaws in their reasoning.
   maskType: 0
   maxDurability: 3

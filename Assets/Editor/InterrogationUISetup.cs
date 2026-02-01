@@ -144,7 +144,7 @@ public class InterrogationUISetup : EditorWindow
         hlg.childControlHeight = true;
         
         // Create 4 mask buttons
-        string[] maskNames = { "The Stoic", "The Victim", "The Hothead", "The Charmer" };
+        string[] maskNames = { "Stoic", "Victim", "Hothead", "Charmer" };
         Color[] maskColors = {
             new Color(0.3f, 0.5f, 0.8f, 1f),   // Logic - Blue
             new Color(0.8f, 0.4f, 0.6f, 1f),   // Emotion - Pink
