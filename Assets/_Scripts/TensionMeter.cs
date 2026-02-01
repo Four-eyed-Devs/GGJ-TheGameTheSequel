@@ -101,9 +101,9 @@ namespace Interrogation.Dialogue
         /// </summary>
         public string GetEndingType()
         {
-            // Tension >= 50 means we kept composure = good ending
-            // Tension < 50 means we lost composure = bad ending
-            return IsHighTension ? "good" : "bad";
+            // Tension < 50 means player stayed calm = good ending (escape)
+            // Tension >= 50 means player got stressed = bad ending (caught)
+            return IsLowTension ? "good" : "bad";
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Interrogation.Dialogue;
 
 public class TextControllerOutro : MonoBehaviour
@@ -30,6 +31,12 @@ public class TextControllerOutro : MonoBehaviour
     public float voiceStartDelay = 0.5f;
     [Tooltip("Delay between dialogue lines")]
     public float delayBetweenLines = 0.5f;
+
+    [Header("Scene Transition")]
+    [Tooltip("Name of the initial/main menu scene to return to")]
+    public string initialSceneName = "IntroScene";
+    [Tooltip("Delay after dialogue ends before transitioning")]
+    public float transitionDelay = 2f;
 
     private AudioSource audioSource;
     private CanvasGroup[] groups;
@@ -180,6 +187,13 @@ public class TextControllerOutro : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             SubtitleUI.Instance.Hide();
         }
+        
+        // Wait before transitioning back to initial screen
+        yield return new WaitForSeconds(transitionDelay);
+        
+        // Transition back to initial screen
+        Debug.Log($"[TextControllerOutro] Transitioning to {initialSceneName}");
+        SceneManager.LoadScene(initialSceneName);
     }
 
     // Shows the text at index. If autoHide is true, it will fade out after displayDuration.

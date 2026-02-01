@@ -104,11 +104,11 @@ namespace Interrogation.UI
             leftAccent.color = accentColor;
             leftAccent.raycastTarget = false;
 
-            // Label - "COMPOSURE"
+            // Label - "TENSION"
             GameObject labelObj = new GameObject("TensionLabel");
             labelObj.transform.SetParent(panelContainer.transform, false);
             tensionLabel = labelObj.AddComponent<TextMeshProUGUI>();
-            tensionLabel.text = meterLabel;
+            tensionLabel.text = "TENSION";
             tensionLabel.fontSize = 16f;
             tensionLabel.fontStyle = FontStyles.UpperCase | FontStyles.Bold;
             tensionLabel.characterSpacing = 6f;
