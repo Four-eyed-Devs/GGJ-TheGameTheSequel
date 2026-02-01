@@ -460,7 +460,7 @@ public class MaskCard3D : MonoBehaviour
 
     private IEnumerator IdleCorountine(string animName)
     {
-        yield return new WaitForSeconds(Random.Range(10f, 30f));
+        yield return new WaitForSeconds(Random.Range(3f, 10f));
 
         if (!canIdle)
             yield break;
