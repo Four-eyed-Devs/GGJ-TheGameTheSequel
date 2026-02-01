@@ -1,8 +1,10 @@
-using UnityEngine;
-using UnityEngine.Events;
+using System.Collections;
+using Interrogation.Dialogue;
 using TMPro;
 using Unity.VisualScripting;
-using Interrogation.Dialogue;
+using UnityEngine;
+using UnityEngine.Events;
+using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 
 /// <summary>
 /// 3D interactable mask card that sits on the interrogation table.
@@ -65,6 +67,7 @@ public class MaskCard3D : MonoBehaviour
     private bool isSubscribed = false;
     private bool isDialogueSubscribed = false;
     private bool firstCLick = true;
+    private bool canIdle = true;
     private Animator anim;
     
     // Properties
@@ -79,7 +82,7 @@ public class MaskCard3D : MonoBehaviour
         originalRotation = transform.localRotation;
         targetRotation = originalRotation;
         anim = GetComponent<Animator>();
-        anim.SetBool("isIdle", true);
+        StartIdleCoroutine();
 
         // Get or create material instance
         if (cardRenderer != null)
@@ -406,6 +409,7 @@ public class MaskCard3D : MonoBehaviour
 
             anim.SetBool("isSelected", true);
             anim.SetBool("isIdle", false);
+            canIdle = false;
 
             return;
         }
@@ -442,6 +446,40 @@ public class MaskCard3D : MonoBehaviour
         CardInputHandler.Instance.UpdateCardPos(this);
 
         firstCLick = true;
+    }
+
+    public void StartIdleCoroutine()
+    {
+        StartCoroutine(IdleCorountine("Idle"));
+    }
+
+    public void StartIdleSelectedCorountine()
+    {
+        StartCoroutine(IdleCorountine("SelectedIdle"));
+    }
+
+    private IEnumerator IdleCorountine(string animName)
+    {
+        yield return new WaitForSeconds(Random.Range(10f, 30f));
+
+        if (!canIdle)
+            yield break;
+
+        anim.SetBool("isIdle", true);
+
+        anim.Play(animName, 0, 0f);
+    }
+
+    public void SetIsSelectedIdle()
+    {
+        anim.SetBool("isSelected", false);
+        anim.SetBool("isIdleSelected", true);
+    }
+
+    public void SetIdleAfterDeselect()
+    {
+        anim.SetBool("isDeselected", false);
+        anim.SetBool("isIdle", true);
     }
     
     /// <summary>
@@ -487,8 +525,9 @@ public class MaskCard3D : MonoBehaviour
         isHovered = false;
         firstCLick = true; // Reset the double-click counter when deselected
 
-        anim.SetBool("isIdle", true);
-        anim.SetBool("isSelected", false);
+        anim.SetBool("isDeselected", true);
+        anim.SetBool("isIdleSelected", false);
+        canIdle = true;
 
         targetPosition = originalPosition;
         targetRotation = originalRotation;
