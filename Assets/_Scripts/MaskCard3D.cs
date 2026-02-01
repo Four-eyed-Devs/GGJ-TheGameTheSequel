@@ -52,6 +52,15 @@ public class MaskCard3D : MonoBehaviour
     [Header("Particle Effect")]
     [SerializeField] private GameObject particleEffect;
     
+    [Header("Mask Audio")]
+    [Tooltip("Unique sound effect for this mask's VFX")]
+    [SerializeField] private AudioClip maskVFXSound;
+    
+    [Tooltip("Optional: Dedicated AudioSource for this mask. If empty, will create one.")]
+    [SerializeField] private AudioSource maskAudioSource;
+    
+    [SerializeField] private float maskSFXVolume = 1f;
+    
     // Runtime state
     private int currentDurability;
     private int usesRemaining = 2; // New dialogue system: max 2 uses per mask
@@ -88,6 +97,14 @@ public class MaskCard3D : MonoBehaviour
         if (cardRenderer != null)
         {
             cardMaterial = cardRenderer.material; // Creates instance
+        }
+        
+        // Create audio source for mask SFX if not assigned
+        if (maskAudioSource == null && maskVFXSound != null)
+        {
+            maskAudioSource = gameObject.AddComponent<AudioSource>();
+            maskAudioSource.playOnAwake = false;
+            maskAudioSource.spatialBlend = 1f; // 3D sound
         }
     }
     
@@ -349,6 +366,9 @@ public class MaskCard3D : MonoBehaviour
         targetPosition = originalPosition + Vector3.up * hoverLiftHeight;
         SetCardColor(hoverColor);
         
+        // Play hover SFX
+        SFXManager.Instance?.PlayMaskHover();
+        
         Debug.Log($"[MaskCard3D] Hover Enter: {cardData?.maskName}");
     }
     
@@ -394,6 +414,31 @@ public class MaskCard3D : MonoBehaviour
         targetRotation = originalRotation * Quaternion.Euler(clickRotation, 0f, 0f);
 
         particleEffect.SetActive(true);
+        
+        // Play mask-specific VFX sound
+        PlayMaskVFXSound();
+    }
+    
+    /// <summary>
+    /// Plays this mask's unique VFX sound effect
+    /// </summary>
+    private void PlayMaskVFXSound()
+    {
+        if (maskVFXSound != null && maskAudioSource != null)
+        {
+            maskAudioSource.PlayOneShot(maskVFXSound, maskSFXVolume);
+        }
+    }
+    
+    /// <summary>
+    /// Stops this mask's VFX sound effect
+    /// </summary>
+    private void StopMaskVFXSound()
+    {
+        if (maskAudioSource != null && maskAudioSource.isPlaying)
+        {
+            maskAudioSource.Stop();
+        }
     }
 
     /// <summary>
@@ -410,6 +455,9 @@ public class MaskCard3D : MonoBehaviour
             anim.SetBool("isSelected", true);
             anim.SetBool("isIdle", false);
             canIdle = false;
+            
+            // Play pickup SFX (first click)
+            SFXManager.Instance?.PlayMaskPickup();
 
             return;
         }
@@ -496,6 +544,9 @@ public class MaskCard3D : MonoBehaviour
         
         Debug.Log($"[MaskCard3D] Selected mask for dialogue: {dialogueMaskType}");
         
+        // Play select SFX (second click / confirm)
+        SFXManager.Instance?.PlayMaskSelect();
+        
         // Visual feedback
         SetCardColor(selectedColor);
         
@@ -510,6 +561,9 @@ public class MaskCard3D : MonoBehaviour
         {
             isDepleted = true;
             PlayBreakEffect();
+            
+            // Play mask break SFX
+            SFXManager.Instance?.PlayMaskBreak();
         }
         
         // Update display
@@ -524,6 +578,9 @@ public class MaskCard3D : MonoBehaviour
         isSelected = false;
         isHovered = false;
         firstCLick = true; // Reset the double-click counter when deselected
+        
+        // Play deselect SFX
+        SFXManager.Instance?.PlayMaskDeselect();
 
         anim.SetBool("isDeselected", true);
         anim.SetBool("isIdleSelected", false);
@@ -534,6 +591,9 @@ public class MaskCard3D : MonoBehaviour
 
         if (particleEffect != null)
             particleEffect.SetActive(false);
+        
+        // Stop mask VFX sound
+        StopMaskVFXSound();
 
         // Check appropriate durability based on which system is active
         bool hasUsesLeft = DialogueManager.Instance != null ? !isDepleted : currentDurability > 0;

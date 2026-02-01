@@ -1508,6 +1508,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 4964872066697493959, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: maskVFXSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6a0e7ef7a900a45e3ac73c1f129078db, type: 3}
     - target: {fileID: 5497491963234500364, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_Type
       value: 0
@@ -1777,6 +1781,9 @@ MonoBehaviour:
   aggressionAccent: {r: 0.8, g: 0.3, b: 0.3, a: 1}
   charmAccent: {r: 0.8, g: 0.7, b: 0.3, a: 1}
   particleEffect: {fileID: 565215320}
+  maskVFXSound: {fileID: 8300000, guid: 0713cd76962f94cda8d0e5a6d8455c82, type: 3}
+  maskAudioSource: {fileID: 0}
+  maskSFXVolume: 1
 --- !u!64 &637669339
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2000,6 +2007,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870063458}
   m_CullTransparentMesh: 1
+--- !u!1 &893673149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7395704305543789238, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
+  m_PrefabInstance: {fileID: 1462472015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &893673152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893673149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac856f2e2a2de804d95a81edef23fdaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManualBaseMapOffset
+  material: {fileID: 2100000, guid: df1f6115e3da89a4a88d6d7261e04edd, type: 2}
+  offset: {x: 0, y: 0}
 --- !u!1 &911402035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,6 +2609,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089715630}
   m_CullTransparentMesh: 1
+--- !u!1 &1098006334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098006336}
+  - component: {fileID: 1098006337}
+  m_Layer: 0
+  m_Name: AudioManagers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1098006336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098006334}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -920.95416, y: 0, z: 28.93665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1098006337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098006334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5265673f16a6a60428a912f8528d7b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SFXManager
+  sfxSource: {fileID: 0}
+  maskHover: {fileID: 0}
+  maskPickup: {fileID: 0}
+  maskSelect: {fileID: 0}
+  maskDeselect: {fileID: 0}
+  maskBreak: {fileID: 0}
+  buttonClick: {fileID: 0}
+  correctChoice: {fileID: 0}
+  wrongChoice: {fileID: 0}
+  tensionUp: {fileID: 0}
+  tensionDown: {fileID: 0}
+  tableSlam: {fileID: 0}
+  sfxVolume: 1
+  enableSFX: 1
 --- !u!1 &1177913717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,6 +3242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interogator-o-bama
       objectReference: {fileID: 0}
+    - target: {fileID: 4270385149481835050, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: df1f6115e3da89a4a88d6d7261e04edd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3165,6 +3253,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       insertIndex: -1
       addedObject: {fileID: 399387010}
+    - targetCorrespondingSourceObject: {fileID: -7395704305543789238, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 893673152}
   m_SourcePrefab: {fileID: 100100000, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
 --- !u!1 &1494796894
 GameObject:
@@ -3873,6 +3964,9 @@ MonoBehaviour:
   aggressionAccent: {r: 0.8, g: 0.3, b: 0.3, a: 1}
   charmAccent: {r: 0.8, g: 0.7, b: 0.3, a: 1}
   particleEffect: {fileID: 7248159239510096870}
+  maskVFXSound: {fileID: 8300000, guid: e8914a193e9c54ad4ac0ee20e6c4a01d, type: 3}
+  maskAudioSource: {fileID: 0}
+  maskSFXVolume: 1
 --- !u!95 &1753790057
 Animator:
   serializedVersion: 7
@@ -4203,6 +4297,9 @@ MonoBehaviour:
   aggressionAccent: {r: 0.8, g: 0.3, b: 0.3, a: 1}
   charmAccent: {r: 0.8, g: 0.7, b: 0.3, a: 1}
   particleEffect: {fileID: 968295464}
+  maskVFXSound: {fileID: 8300000, guid: e0c2a70bf12f84ba782ddd7ec19ffc96, type: 3}
+  maskAudioSource: {fileID: 0}
+  maskSFXVolume: 1
 --- !u!64 &1983050498
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9265,3 +9362,4 @@ SceneRoots:
   - {fileID: 637669335}
   - {fileID: 911402039}
   - {fileID: 1462472015}
+  - {fileID: 1098006336}
