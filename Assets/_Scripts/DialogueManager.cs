@@ -44,6 +44,8 @@ namespace Interrogation.Dialogue
         public event Action<bool> OnGameEnded; // true = good ending
         public event Action OnMaskSelectionEnabled;
         public event Action OnMaskSelectionDisabled;
+        public event Action OnWrongMaskSelected;
+        public event Action OnCorrectMaskSelected;
 
         // Data
         private IntroData introData;
@@ -236,10 +238,12 @@ namespace Interrogation.Dialogue
             if (isCorrect)
             {
                 TensionMeter.Instance?.OnCorrectMask();
+                OnCorrectMaskSelected?.Invoke();
             }
             else
             {
                 TensionMeter.Instance?.OnWrongMask();
+                OnWrongMaskSelected?.Invoke();
             }
 
             // Phase: Player response
