@@ -14,10 +14,14 @@ public class InterrogatorAnimator : MonoBehaviour
     
     [Tooltip("Parameter name for table slam trigger")]
     [SerializeField] private string tableSlamTrigger = "TableSlam";
+
+    [SerializeField] private string tableHumpTrigger = "TableHump";
     
     [Header("Tension Thresholds")]
     [Tooltip("Tension value above which interrogator appears stressed")]
     [SerializeField] private int stressedThreshold = 60;
+
+    [SerializeField] private int veryStressedTreshold = 90;
     
     [Tooltip("Trigger table slam when tension increases by this much in one change")]
     [SerializeField] private int slamOnTensionSpike = 10;
@@ -26,12 +30,17 @@ public class InterrogatorAnimator : MonoBehaviour
     [Tooltip("Chance to play table slam on wrong mask selection (0-1)")]
     [Range(0f, 1f)]
     [SerializeField] private float tableSlamChance = 0.5f;
-    
+    [Range(0f, 1f)]
+    [SerializeField] private float tableHumpChance = 0.2f;
+
+
     private Animator animator;
     
     // Cache parameter hashes for performance
     private int stressedHash;
+    private int verStressedHash;
     private int tableSlamHash;
+    private int tableHumpHash;
     
     private void Awake()
     {
@@ -39,7 +48,9 @@ public class InterrogatorAnimator : MonoBehaviour
         
         // Cache parameter hashes
         stressedHash = Animator.StringToHash(stressedParam);
+        veryStressedTreshold = Animator.StringToHash(veryStressedParam);
         tableSlamHash = Animator.StringToHash(tableSlamTrigger);
+        tableHumpHash = Animator.StringToHash(tableHumpTrigger)
     }
     
     private void Start()
@@ -89,7 +100,11 @@ public class InterrogatorAnimator : MonoBehaviour
         if (delta >= slamOnTensionSpike)
         {
             // Tension spiked - consider playing table slam
-            if (Random.value < tableSlamChance)
+            if (Random.value < tableHumpChance)
+            {
+                PlayTableHump();
+            }
+            else if(Random.Value < tableSlamChance)
             {
                 PlayTableSlam();
             }
@@ -124,7 +139,12 @@ public class InterrogatorAnimator : MonoBehaviour
     {
         animator.SetTrigger(tableSlamHash);
     }
-    
+
+    public void PlayTableHump()
+    {
+        animator.SetTrigger(tableHumpHash);
+    }
+
     /// <summary>
     /// Force set stressed state (useful for cutscenes/scripted moments).
     /// </summary>
