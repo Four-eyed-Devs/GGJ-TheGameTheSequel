@@ -3,9 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Scene Names")]
+    [SerializeField] private string introSceneName = "IntroScene";
+    
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        // Use transition manager if available for cinematic fade
+        if (SceneTransitionManager.Instance != null)
+        {
+            SceneTransitionManager.Instance.LoadSceneWithFade(introSceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(introSceneName);
+        }
     }
 
     public void QuitGame()

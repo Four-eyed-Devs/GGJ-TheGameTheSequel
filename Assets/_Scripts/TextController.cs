@@ -12,6 +12,13 @@ public class TextController : MonoBehaviour
     [Tooltip("How long the text stays fully visible before fading out (seconds)")]
     public float displayDuration = 5f;
 
+    [Header("Scene Transition")]
+    [Tooltip("Name of the scene to load after all text is consumed")]
+    public string nextSceneName = "SampleScene";
+    
+    [Tooltip("Reference to SceneController for transitions")]
+    public SceneController sceneController;
+
     private CanvasGroup[] groups;
     private int index = 0;
 
@@ -57,7 +64,7 @@ public class TextController : MonoBehaviour
         currentCg.gameObject.SetActive(true);
         yield return StartCoroutine(Fade(currentCg, 0f, 1f, textFadeDuration));
 
-        while (true)
+        while (index < groups.Length - 1)
         {
             // Wait while visible
             yield return new WaitForSeconds(displayDuration);
@@ -66,13 +73,42 @@ public class TextController : MonoBehaviour
             yield return StartCoroutine(Fade(currentCg, 1f, 0f, textFadeDuration));
             currentCg.gameObject.SetActive(false);
 
-            // Advance index (wrap)
-            index = (index + 1) % groups.Length;
+            // Advance index
+            index++;
             currentCg = groups[index];
 
             // Activate and fade in next
             currentCg.gameObject.SetActive(true);
             yield return StartCoroutine(Fade(currentCg, 0f, 1f, textFadeDuration));
+        }
+        
+        // Show last text for display duration
+        yield return new WaitForSeconds(displayDuration);
+        
+        // Fade out last text
+        yield return StartCoroutine(Fade(currentCg, 1f, 0f, textFadeDuration));
+        currentCg.gameObject.SetActive(false);
+        
+        // All text consumed - transition to next scene
+        TransitionToNextScene();
+    }
+    
+    private void TransitionToNextScene()
+    {
+        // Use SceneController if assigned
+        if (sceneController != null)
+        {
+            sceneController.LoadScene(nextSceneName);
+        }
+        // Fallback to SceneTransitionManager
+        else if (SceneTransitionManager.Instance != null)
+        {
+            SceneTransitionManager.Instance.LoadSceneWithFade(nextSceneName);
+        }
+        // Direct load as last resort
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
         }
     }
 
