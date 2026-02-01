@@ -14,9 +14,9 @@ public class TextControllerOutro : MonoBehaviour
     public float displayDuration = 5f;
 
     // Optional: index mapping for outcomes (set in Inspector)
-    [Tooltip("Index used when player wins (tension >= 50).")]
+    [Tooltip("Index used when player wins (tension < 50).")]
     public int winIndex = 0;
-    [Tooltip("Index used when player loses (tension < 50).")]
+    [Tooltip("Index used when player loses (tension >= 50).")]
     public int loseIndex = 1;
 
     [Header("Auto-Start")]
@@ -25,11 +25,34 @@ public class TextControllerOutro : MonoBehaviour
     [Tooltip("Auto-hide after display duration")]
     public bool autoHide = false;
 
+    [Header("Voice Settings")]
+    [Tooltip("Delay before starting voice playback")]
+    public float voiceStartDelay = 0.5f;
+    [Tooltip("Delay between dialogue lines")]
+    public float delayBetweenLines = 0.5f;
+
+    private AudioSource audioSource;
     private CanvasGroup[] groups;
     private Coroutine cycleCoroutine;
+    private EndingsData endingsData;
 
     private void Awake()
     {
+        // Get or create AudioSource for voice playback
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.playOnAwake = false;
+
+        // Load endings data from JSON
+        endingsData = DialogueLoader.LoadEndings();
+        if (endingsData == null)
+        {
+            Debug.LogWarning("[TextControllerOutro] Failed to load endings.json");
+        }
+
         if (textObjects == null || textObjects.Length == 0)
         {
             Debug.LogWarning("TextController: no textObjects assigned.");
@@ -63,7 +86,8 @@ public class TextControllerOutro : MonoBehaviour
     }
 
     /// <summary>
-    /// Shows win text if tension >= 50, lose text if tension < 50
+    /// Shows win text if tension < 50, lose text if tension >= 50
+    /// Also plays the appropriate voice clips from endings.json
     /// </summary>
     public void ShowOutcomeBasedOnTension()
     {
@@ -79,10 +103,83 @@ public class TextControllerOutro : MonoBehaviour
             Debug.LogWarning("[TextControllerOutro] TensionMeter.Instance not found! Using default tension of 50.");
         }
 
-        bool playerWon = tension >= 50;
+        bool playerWon = tension < 50;
         Debug.Log($"[TextControllerOutro] Showing {(playerWon ? "WIN" : "LOSE")} outcome (tension: {tension})");
         
         ShowTextByOutcome(playerWon, autoHide);
+        
+        // Play the appropriate ending dialogue from endings.json
+        StartCoroutine(PlayEndingDialogue(playerWon));
+    }
+
+    /// <summary>
+    /// Plays the ending dialogue lines from endings.json based on win/lose
+    /// </summary>
+    private IEnumerator PlayEndingDialogue(bool playerWon)
+    {
+        yield return new WaitForSeconds(voiceStartDelay);
+
+        if (endingsData == null)
+        {
+            Debug.LogWarning("[TextControllerOutro] No endings data loaded");
+            yield break;
+        }
+
+        // Select the correct ending based on tension
+        EndingData ending = playerWon ? endingsData.goodEnding : endingsData.badEnding;
+        
+        if (ending?.lines == null || ending.lines.Length == 0)
+        {
+            Debug.Log($"[TextControllerOutro] No lines for {(playerWon ? "good" : "bad")} ending");
+            yield break;
+        }
+
+        Debug.Log($"[TextControllerOutro] Playing {(playerWon ? "GOOD" : "BAD")} ending with {ending.lines.Length} lines");
+
+        foreach (var line in ending.lines)
+        {
+            if (line == null) continue;
+
+            // Show subtitle if SubtitleUI exists
+            if (SubtitleUI.Instance != null)
+            {
+                SubtitleUI.Instance.ShowInvestigatorLine(line.text);
+            }
+
+            // Load and play voice clip
+            if (!string.IsNullOrEmpty(line.voiceClipPath))
+            {
+                AudioClip clip = DialogueLoader.LoadVoiceClip(line.voiceClipPath);
+                if (clip != null)
+                {
+                    Debug.Log($"[TextControllerOutro] Playing: {line.text}");
+                    audioSource.clip = clip;
+                    audioSource.Play();
+                    
+                    // Wait for clip to finish
+                    yield return new WaitForSeconds(clip.length + delayBetweenLines);
+                }
+                else
+                {
+                    Debug.LogWarning($"[TextControllerOutro] Failed to load voice clip: {line.voiceClipPath}");
+                    // Wait a default time if no clip
+                    yield return new WaitForSeconds(2f);
+                }
+            }
+            else
+            {
+                // No voice clip, wait based on text length
+                float waitTime = line.text.Length * 0.05f + 1f;
+                yield return new WaitForSeconds(waitTime);
+            }
+        }
+        
+        // Hide subtitle after all lines
+        if (SubtitleUI.Instance != null)
+        {
+            yield return new WaitForSeconds(0.5f);
+            SubtitleUI.Instance.Hide();
+        }
     }
 
     // Shows the text at index. If autoHide is true, it will fade out after displayDuration.

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Interrogation.Dialogue
 {
@@ -324,6 +325,9 @@ namespace Interrogation.Dialogue
 
             SetPhase(GamePhase.GameOver);
             OnGameEnded?.Invoke(isGoodEnding);
+            
+            // Transition to OutroScene
+            SceneManager.LoadScene("OutroScene");
         }
 
         /// <summary>

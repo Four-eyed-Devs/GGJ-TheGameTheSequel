@@ -39,7 +39,7 @@ namespace Interrogation.UI
         [SerializeField] private float pulseIntensity = 0.2f;
 
         [Header("Labels")]
-        [SerializeField] private string meterLabel = "COMPOSURE";
+        [SerializeField] private string meterLabel = "TENSION";
 
         private float targetValue;
         private float currentValue;

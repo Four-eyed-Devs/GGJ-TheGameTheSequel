@@ -1582,7 +1582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812544880844919686, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.154
+      value: -0.159
       objectReference: {fileID: 0}
     - target: {fileID: 6812544880844919686, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2792,7 +2792,7 @@ MonoBehaviour:
   maskPickup: {fileID: 8300000, guid: 821b81548520a4e5e92a3c6d4c216b58, type: 3}
   maskSelect: {fileID: 0}
   maskDeselect: {fileID: 8300000, guid: d2ace14f6252242e48980996b461b4c5, type: 3}
-  maskBreak: {fileID: 0}
+  maskBreak: {fileID: 8300000, guid: 0692c68efc25b495aacd74af05d380c1, type: 3}
   buttonClick: {fileID: 0}
   correctChoice: {fileID: 0}
   wrongChoice: {fileID: 0}
