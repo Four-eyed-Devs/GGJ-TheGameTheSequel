@@ -1262,15 +1262,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1165265571652687693, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.41799927
+      value: 0.16900635
       objectReference: {fileID: 0}
     - target: {fileID: 1165265571652687693, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21500003
+      value: 0.29700005
       objectReference: {fileID: 0}
     - target: {fileID: 1165265571652687693, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.26900005
+      value: -0.2709999
       objectReference: {fileID: 0}
     - target: {fileID: 1165265571652687693, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1438,11 +1438,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4213292281828522346, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.105
+      value: -0.056
       objectReference: {fileID: 0}
     - target: {fileID: 4213292281828522346, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04
+      value: 0.122
+      objectReference: {fileID: 0}
+    - target: {fileID: 4213292281828522346, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4213292281828522346, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4803686401865012426, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalScale.x
@@ -1511,7 +1519,7 @@ PrefabInstance:
     - target: {fileID: 4964872066697493959, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: maskVFXSound
       value: 
-      objectReference: {fileID: 8300000, guid: 6a0e7ef7a900a45e3ac73c1f129078db, type: 3}
+      objectReference: {fileID: 8300000, guid: af33e4d84072d4a7d8f0a153e2991b90, type: 3}
     - target: {fileID: 5497491963234500364, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_Type
       value: 0
@@ -1553,8 +1561,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7248159239510096870}
     - target: {fileID: 6812544880844919686, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.337
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812544880844919686, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21
+      value: -0.154
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812544880844919686, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.019
       objectReference: {fileID: 0}
     - target: {fileID: 7980482022928424282, guid: 995c52adf5b7c07468ca82abec12dd74, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1781,7 +1797,7 @@ MonoBehaviour:
   aggressionAccent: {r: 0.8, g: 0.3, b: 0.3, a: 1}
   charmAccent: {r: 0.8, g: 0.7, b: 0.3, a: 1}
   particleEffect: {fileID: 565215320}
-  maskVFXSound: {fileID: 8300000, guid: 0713cd76962f94cda8d0e5a6d8455c82, type: 3}
+  maskVFXSound: {fileID: 8300000, guid: 87295785b20654d2fa94ca292f117621, type: 3}
   maskAudioSource: {fileID: 0}
   maskSFXVolume: 1
 --- !u!64 &637669339
@@ -2655,9 +2671,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SFXManager
   sfxSource: {fileID: 0}
   maskHover: {fileID: 0}
-  maskPickup: {fileID: 0}
+  maskPickup: {fileID: 8300000, guid: 821b81548520a4e5e92a3c6d4c216b58, type: 3}
   maskSelect: {fileID: 0}
-  maskDeselect: {fileID: 0}
+  maskDeselect: {fileID: 8300000, guid: d2ace14f6252242e48980996b461b4c5, type: 3}
   maskBreak: {fileID: 0}
   buttonClick: {fileID: 0}
   correctChoice: {fileID: 0}
@@ -3196,31 +3212,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -936.845
+      value: -937.312
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.167
+      value: 1.289
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.986
+      value: 12.983
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.677176
+      value: 0.6735786
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.021678956
+      value: 0.07300106
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.73512506
+      value: -0.7312198
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.023534112
+      value: 0.07924809
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 02f992e77adb59447b11d3f4f8012186, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3964,7 +3980,7 @@ MonoBehaviour:
   aggressionAccent: {r: 0.8, g: 0.3, b: 0.3, a: 1}
   charmAccent: {r: 0.8, g: 0.7, b: 0.3, a: 1}
   particleEffect: {fileID: 7248159239510096870}
-  maskVFXSound: {fileID: 8300000, guid: e8914a193e9c54ad4ac0ee20e6c4a01d, type: 3}
+  maskVFXSound: {fileID: 8300000, guid: 2e842711395e74dbf9b539dd6f96869a, type: 3}
   maskAudioSource: {fileID: 0}
   maskSFXVolume: 1
 --- !u!95 &1753790057
