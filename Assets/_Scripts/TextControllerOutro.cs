@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Interrogation.Dialogue;
 
 public class TextControllerOutro : MonoBehaviour
 {
@@ -13,10 +14,16 @@ public class TextControllerOutro : MonoBehaviour
     public float displayDuration = 5f;
 
     // Optional: index mapping for outcomes (set in Inspector)
-    [Tooltip("Index used when player wins.")]
+    [Tooltip("Index used when player wins (tension >= 50).")]
     public int winIndex = 0;
-    [Tooltip("Index used when player loses.")]
+    [Tooltip("Index used when player loses (tension < 50).")]
     public int loseIndex = 1;
+
+    [Header("Auto-Start")]
+    [Tooltip("Automatically show win/lose text on Start based on TensionMeter")]
+    public bool autoShowOnStart = true;
+    [Tooltip("Auto-hide after display duration")]
+    public bool autoHide = false;
 
     private CanvasGroup[] groups;
     private Coroutine cycleCoroutine;
@@ -45,6 +52,37 @@ public class TextControllerOutro : MonoBehaviour
             cg.blocksRaycasts = false;
             go.SetActive(false);
         }
+    }
+
+    private void Start()
+    {
+        if (autoShowOnStart)
+        {
+            ShowOutcomeBasedOnTension();
+        }
+    }
+
+    /// <summary>
+    /// Shows win text if tension >= 50, lose text if tension < 50
+    /// </summary>
+    public void ShowOutcomeBasedOnTension()
+    {
+        int tension = 50; // Default to 50 if TensionMeter not found
+
+        if (TensionMeter.Instance != null)
+        {
+            tension = TensionMeter.Instance.CurrentTension;
+            Debug.Log($"[TextControllerOutro] TensionMeter found. Tension = {tension}");
+        }
+        else
+        {
+            Debug.LogWarning("[TextControllerOutro] TensionMeter.Instance not found! Using default tension of 50.");
+        }
+
+        bool playerWon = tension >= 50;
+        Debug.Log($"[TextControllerOutro] Showing {(playerWon ? "WIN" : "LOSE")} outcome (tension: {tension})");
+        
+        ShowTextByOutcome(playerWon, autoHide);
     }
 
     // Shows the text at index. If autoHide is true, it will fade out after displayDuration.

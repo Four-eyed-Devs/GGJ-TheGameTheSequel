@@ -2865,18 +2865,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interrogation.UI.TensionMeterUI
   tensionSlider: {fileID: 79135159}
   fillImage: {fileID: 1778309526}
-  tensionText: {fileID: 1661221024}
-  statusText: {fileID: 0}
-  lowTensionColor: {r: 0.2, g: 0.6, b: 0.2, a: 1}
-  highTensionColor: {r: 0.8, g: 0.3, b: 0.3, a: 1}
-  neutralColor: {r: 0.8, g: 0.7, b: 0.3, a: 1}
+  backgroundImage: {fileID: 0}
+  tensionLabel: {fileID: 0}
+  tensionValueText: {fileID: 0}
+  createUIAtRuntime: 1
+  barWidth: 200
+  barHeight: 8
+  topMargin: 60
+  rightMargin: 50
+  accentColor: {r: 0.9, g: 0.75, b: 0.4, a: 1}
+  calmColor: {r: 0.4, g: 0.7, b: 0.5, a: 1}
+  stressedColor: {r: 0.85, g: 0.35, b: 0.3, a: 1}
+  backgroundColor: {r: 0.15, g: 0.15, b: 0.15, a: 0.8}
+  barBackgroundColor: {r: 0.1, g: 0.1, b: 0.1, a: 0.9}
   animationSpeed: 5
   animateChanges: 1
-  pulseOnChange: 1
   pulseDuration: 0.3
-  pulseScale: 1.1
-  lowTensionStatus: Suspicious
-  highTensionStatus: Composed
+  pulseIntensity: 0.2
+  meterLabel: COMPOSURE
 --- !u!114 &1177913720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2884,7 +2890,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177913717}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3690,7 +3696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1661221023
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4221,7 +4227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1778309525
 RectTransform:
   m_ObjectHideFlags: 0
