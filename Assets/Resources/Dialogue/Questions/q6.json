@@ -13,14 +13,14 @@
                 "playerLine": "No. I have provided evidence and alibis that prove my innocence. The facts speak for themselves.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Cold to the end. No emotion at all.", "voiceClipPath": "Voice/Investigator/q6_logic_low_01" },
-                        { "text": "Facts can be fabricated. Emotions are harder to fake.", "voiceClipPath": "Voice/Investigator/q6_logic_low_02" },
-                        { "text": "That robotic response tells me everything.", "voiceClipPath": "Voice/Investigator/q6_logic_low_03" }
+                        { "text": "Your silence is a choice, but it’s a heavy one to carry.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicLowTension/The Stoic Low Tension 1.mp3" },
+                        { "text": "Every second you spend not talking is a second the world decides your guilt for you.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicLowTension/The Stoic Low Tension 2.mp3" },
+                        { "text": "You think staring makes you look innocent, but it only delays the inevitable.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicLowTension/The Stoic Low Tension 3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "Your evidence is compelling. I'll review it.", "voiceClipPath": "Voice/Investigator/q6_logic_high_01" },
-                        { "text": "Fair enough. The facts will determine the outcome.", "voiceClipPath": "Voice/Investigator/q6_logic_high_02" },
-                        { "text": "Logical approach. We'll see what holds up.", "voiceClipPath": "Voice/Investigator/q6_logic_high_03" }
+                        { "text": "Say something, damn it! You think this quiet act makes you untouchable?", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicHighTension/The Stoic High Tension 1.mp3" },
+                        { "text": "You think your mask protects you?", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicHighTension/The Stoic High Tension 2.mp3" },
+                        { "text": "I will tear that calm right off your face if I have to!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicHighTension/The Stoic High Tension 3.mp3" }
                     ]
                 }
             },
@@ -30,14 +30,14 @@
                 "playerLine": "No! How could you even ask me that? They were my friend! I would never... I could never hurt them.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Convincing performance. But I've seen better.", "voiceClipPath": "Voice/Investigator/q6_emotion_low_01" },
-                        { "text": "Those tears won't save you now.", "voiceClipPath": "Voice/Investigator/q6_emotion_low_02" },
-                        { "text": "Everyone says that. Not everyone means it.", "voiceClipPath": "Voice/Investigator/q6_emotion_low_03" }
+                        { "text": "I believe you're scared, and for once, that fear is making you useful.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimLowTension/Victim Good Low T1.mp3" },
+                        { "text": "I see it in your eyes—you’re done lying. Good.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimLowTension/Victim Good Low T2.mp3" },
+                        { "text": "Now we’re moving! Breathe, focus!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimLowTension/Victim Good Low T3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "I had to ask. It's my job.", "voiceClipPath": "Voice/Investigator/q6_emotion_high_01" },
-                        { "text": "Your reaction seems genuine. I'll note that.", "voiceClipPath": "Voice/Investigator/q6_emotion_high_02" },
-                        { "text": "I believe you. But the investigation continues.", "voiceClipPath": "Voice/Investigator/q6_emotion_high_03" }
+                        { "text": "Stop the crying and stay on that thought.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimHighTension/Victim Good High T1.mp3" },
+                        { "text": "Keep talking! Every piece you give me is a weight off your shoulders.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimHighTension/Victim Good High T2.mp3" },
+                        { "text": "Stop shaking and start talking! You're finally making sense!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimHighTension/Victim Good High T3.mp3" }
                     ]
                 }
             },
@@ -47,14 +47,14 @@
                 "playerLine": "Absolutely not! And I'm done with these accusations! Either charge me or let me go!",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Demanding to leave? That's suspicious.", "voiceClipPath": "Voice/Investigator/q6_aggression_low_01" },
-                        { "text": "Only guilty people demand to leave mid-interrogation.", "voiceClipPath": "Voice/Investigator/q6_aggression_low_02" },
-                        { "text": "Oh, we'll be charging you alright.", "voiceClipPath": "Voice/Investigator/q6_aggression_low_03" }
+                        { "text": "All that noise won’t change anything. You’re just wasting oxygen that you’re going to need later.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadLowTension/The Hothead Low Tension 1.mp3" },
+                        { "text": "A loud mouth. A closed mind. A locked cell.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadLowTension/The Hothead Low Tension 2.mp3" },
+                        { "text": "Anger is just a mask for fear. I'm looking forward to seeing what's hiding underneath.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadLowTension/The Hothead Low Tension 3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "I understand your frustration. We're almost done.", "voiceClipPath": "Voice/Investigator/q6_aggression_high_01" },
-                        { "text": "Fair enough. You've been cooperative.", "voiceClipPath": "Voice/Investigator/q6_aggression_high_02" },
-                        { "text": "Your patience is noted. Just one more moment.", "voiceClipPath": "Voice/Investigator/q6_aggression_high_03" }
+                        { "text": "Keep screaming and I’ll make sure only four walls and a steel door will hear you from now on!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadHighTension/The Hothead High Tension 1.mp3" },
+                        { "text": "Finally, real passion. Everything comes out when people lose control.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadHighTension/The Hothead High Tension 2.mp3" },
+                        { "text": "You were so focused on yelling you forgot to keep the pieces together.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadHighTension/The Hothead High Tension 3.mp3" }
                     ]
                 }
             },
@@ -64,14 +64,14 @@
                 "playerLine": "Detective, after everything we've discussed, do you really think I'm capable of that? You know me better by now.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "I don't know you at all. That's the problem.", "voiceClipPath": "Voice/Investigator/q6_charm_low_01" },
-                        { "text": "Killers often seem the most charming.", "voiceClipPath": "Voice/Investigator/q6_charm_low_02" },
-                        { "text": "Nice try. But charm doesn't equal innocence.", "voiceClipPath": "Voice/Investigator/q6_charm_low_03" }
+                        { "text": "That’s an intricate story, but even the tightest knots eventually unravel!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverLowTension/The Deceiver Low Tension 1.mp3" },
+                        { "text": "You weave beautiful webs. But even the spider eventually gets tangled.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverLowTension/The Deceiver Low Tension 2.mp3" },
+                        { "text": "You weave. You spin. You choke.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverLowTension/The Deceiver Low Tension 3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "You've made a good impression. But impressions aren't evidence.", "voiceClipPath": "Voice/Investigator/q6_charm_high_01" },
-                        { "text": "I'm forming my opinion. Let the evidence speak.", "voiceClipPath": "Voice/Investigator/q6_charm_high_02" },
-                        { "text": "We'll see. Thank you for your cooperation.", "voiceClipPath": "Voice/Investigator/q6_charm_high_03" }
+                        { "text": "Stop spinning webs! The truth is staring at you and you’re still trying to paint over it!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverHighTension/The Deceiver High Tension 1.mp3" },
+                        { "text": "Every word is rot. Every breath is poison. Every second is a lie.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverHighTension/The Deceiver High Tension 2.mp3" },
+                        { "text": "You think you're smart? You're in that chair for a reason, and it’s not because you’re a genius.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverHighTension/The Deceiver High Tension 3.mp3" }
                     ]
                 }
             }

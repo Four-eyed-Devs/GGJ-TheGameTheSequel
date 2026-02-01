@@ -13,14 +13,14 @@
                 "playerLine": "That's to be expected. I visited there regularly for work purposes.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Work purposes? At 2 AM?", "voiceClipPath": "Voice/Investigator/q3_logic_low_01" },
-                        { "text": "Your fingerprints were on the murder weapon.", "voiceClipPath": "Voice/Investigator/q3_logic_low_02" },
-                        { "text": "Expected, you say? Interesting choice of words.", "voiceClipPath": "Voice/Investigator/q3_logic_low_03" }
+                        { "text": "Your silence is a choice, but it’s a heavy one to carry.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicLowTension/The Stoic Low Tension 1.mp3" },
+                        { "text": "Every second you spend not talking is a second the world decides your guilt for you.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicLowTension/The Stoic Low Tension 2.mp3" },
+                        { "text": "You think staring makes you look innocent, but it only delays the inevitable.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicLowTension/The Stoic Low Tension 3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "Fair point. When was your last visit there?", "voiceClipPath": "Voice/Investigator/q3_logic_high_01" },
-                        { "text": "We'll need to narrow down the timeline.", "voiceClipPath": "Voice/Investigator/q3_logic_high_02" },
-                        { "text": "That's reasonable. Can anyone confirm your visits?", "voiceClipPath": "Voice/Investigator/q3_logic_high_03" }
+                        { "text": "Say something, damn it! You think this quiet act makes you untouchable?", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicHighTension/The Stoic High Tension 1.mp3" },
+                        { "text": "You think your mask protects you?", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicHighTension/The Stoic High Tension 2.mp3" },
+                        { "text": "I will tear that calm right off your face if I have to!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/StoicHighTension/The Stoic High Tension 3.mp3" }
                     ]
                 }
             },
@@ -30,14 +30,14 @@
                 "playerLine": "Oh god... I was there. But not when it happened! You have to believe me!",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Panicking won't help you. When were you there?", "voiceClipPath": "Voice/Investigator/q3_emotion_low_01" },
-                        { "text": "Interesting. You just admitted to being at the scene.", "voiceClipPath": "Voice/Investigator/q3_emotion_low_02" },
-                        { "text": "Your distress is noted. Now tell me more.", "voiceClipPath": "Voice/Investigator/q3_emotion_low_03" }
+                        { "text": "The tears don't change the facts.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimLowTension/The Victim Low Tension 1.mp3" },
+                        { "text": "No more crying. No more hiding. No more light.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimLowTension/The Victim Low Tension 2.mp3" },
+                        { "text": "Innocence is a fragile thing. Once it’s broken, no amount of weeping can mend it.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimLowTension/The Victim Low Tension 3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "Calm down. Just tell me when you were there.", "voiceClipPath": "Voice/Investigator/q3_emotion_high_01" },
-                        { "text": "I'm listening. Explain the circumstances.", "voiceClipPath": "Voice/Investigator/q3_emotion_high_02" },
-                        { "text": "Take a breath. We'll sort this out.", "voiceClipPath": "Voice/Investigator/q3_emotion_high_03" }
+                        { "text": "Stop the sniveling! It won't save you now!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimHighTension/The Victim High Tension 1.mp3" },
+                        { "text": "Your tears are useless here. They won’t wash away what’s on your hands.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimHighTension/The Victim High Tension 1.mp3" },
+                        { "text": "I don't care if you're scared. I care about the truth!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/VictimHighTension/The Victim High Tension 3.mp3" }
                     ]
                 }
             },
@@ -47,14 +47,14 @@
                 "playerLine": "Of course my prints are there! I've been there dozens of times! This is a setup and you know it!",
                 "reactions": {
                     "lowTension": [
-                        { "text": "A setup? That's quite the accusation.", "voiceClipPath": "Voice/Investigator/q3_aggression_low_01" },
-                        { "text": "Your anger doesn't prove your innocence.", "voiceClipPath": "Voice/Investigator/q3_aggression_low_02" },
-                        { "text": "Interesting theory. Who would frame you?", "voiceClipPath": "Voice/Investigator/q3_aggression_low_03" }
+                        { "text": "Yes! Keep that energy, but point it at the facts.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadLowTension/Hothead Good Low T1.mp3" },
+                        { "text": "That moment of clarity. Hold onto it. That’s exactly what I need.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadLowTension/Hothead Good Low T2.mp3" },
+                        { "text": "Use that energy! Channel it into the reality!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadLowTension/Hothead Good Low T3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "You're right, that alone isn't conclusive evidence.", "voiceClipPath": "Voice/Investigator/q3_aggression_high_01" },
-                        { "text": "Fair point. Prints alone don't prove anything.", "voiceClipPath": "Voice/Investigator/q3_aggression_high_02" },
-                        { "text": "Your frustration is understandable. Let's move on.", "voiceClipPath": "Voice/Investigator/q3_aggression_high_03" }
+                        { "text": "That’s the spirit! Let the truth out.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadHighTension/Hothead Good High T1.mp3" },
+                        { "text": "Keep shouting if it helps you talk, but keep it on the facts!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadHighTension/Hothead Good High T2.mp3" },
+                        { "text": "Love it when you're this 'honest!'", "voiceClipPath": "Assets/Resources/Audio Voice Lines/HotheadHighTension/Hothead Good High T3.mp3" }
                     ]
                 }
             },
@@ -64,14 +64,14 @@
                 "playerLine": "Detective, I'm an open book. I've got nothing to hide. Check all the prints you want.",
                 "reactions": {
                     "lowTension": [
-                        { "text": "Open book? Then why does your story keep changing?", "voiceClipPath": "Voice/Investigator/q3_charm_low_01" },
-                        { "text": "That confidence concerns me more than it reassures.", "voiceClipPath": "Voice/Investigator/q3_charm_low_02" },
-                        { "text": "We will. And we'll find the truth.", "voiceClipPath": "Voice/Investigator/q3_charm_low_03" }
+                        { "text": "That’s an intricate story, but even the tightest knots eventually unravel!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverLowTension/The Deceiver Low Tension 1.mp3" },
+                        { "text": "You weave beautiful webs. But even the spider eventually gets tangled.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverLowTension/The Deceiver Low Tension 2.mp3" },
+                        { "text": "You weave. You spin. You choke.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverLowTension/The Deceiver Low Tension 3.mp3" }
                     ],
                     "highTension": [
-                        { "text": "I appreciate your cooperation.", "voiceClipPath": "Voice/Investigator/q3_charm_high_01" },
-                        { "text": "Good. Transparency helps everyone.", "voiceClipPath": "Voice/Investigator/q3_charm_high_02" },
-                        { "text": "We'll take you up on that. Continue.", "voiceClipPath": "Voice/Investigator/q3_charm_high_03" }
+                        { "text": "Stop spinning webs! The truth is staring at you and you’re still trying to paint over it!", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverHighTension/The Deceiver High Tension 1.mp3" },
+                        { "text": "Every word is rot. Every breath is poison. Every second is a lie.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverHighTension/The Deceiver High Tension 2.mp3" },
+                        { "text": "You think you're smart? You're in that chair for a reason, and it’s not because you’re a genius.", "voiceClipPath": "Assets/Resources/Audio Voice Lines/DeceiverHighTension/The Deceiver High Tension 3.mp3" }
                     ]
                 }
             }
